@@ -64,6 +64,23 @@ end
 local function clearMembership(p)
  p:SetAttribute("ReadyZone",nil)
 end
+-- Players a round never took (still loading at launch, over the player cap, or sent back because teleporting failed)
+-- go back in the arrival queue, so they are never left stranded in the forest without a round.
+local function requeue(players)
+ local t=workspace:GetServerTimeNow()
+ for _,p in players do
+  if p.Parent==Players then
+   lobbyArrivals[p]=lobbyArrivals[p] or t
+   lobbyArrivalFirstAt=lobbyArrivalFirstAt or t
+  end
+ end
+end
+local function spawnCapacity()
+ local n=0
+ for _,v in spawnFolder:GetChildren() do if v:IsA("BasePart") then n+=1 end end
+ return n
+end
+local TELEPORT_ATTEMPTS=4
 local function endRound(winner)
  if not active then return end
  local previous=active active=nil
@@ -86,26 +103,38 @@ local function endRound(winner)
  end
  local returning={}
  for _,p in previous.players do if p.Parent==Players then table.insert(returning,p) end end
- if #returning>0 and not RunService:IsStudio() then
+ if #returning>0 and RunService:IsStudio() then
+  -- Studio never teleports: queue the group again so a test session can play another round.
+  requeue(returning)
+ elseif #returning>0 then
   task.spawn(function()
-   while not Progression.WaitForSaves(returning,20) do
-    warn("Return to lobby delayed: XP is still saving; retrying.")
+   local function stillHere()
     local connected={}
     for _,player in returning do if player.Parent==Players then table.insert(connected,player) end end
     returning=connected
-    if #returning==0 then return end
+    return #returning>0
    end
-   local connected={}
-   for _,player in returning do if player.Parent==Players then table.insert(connected,player) end end
-   returning=connected
-   if #returning==0 then return end
-   local options=Instance.new("TeleportOptions")
-   options:SetTeleportData(require(script.Parent.ForestProgressTransfer).Build(returning))
-   local ok,err=pcall(function() TeleportService:TeleportAsync(LOBBY_PLACE_ID,returning,options) end)
-   if not ok then warn("Return to lobby failed: "..tostring(err)) end
+   while not Progression.WaitForSaves(returning,20) do
+    warn("Return to lobby delayed: XP is still saving; retrying.")
+    if not stillHere() then return end
+   end
+   -- Teleports fail transiently (flooded or full lobby servers), so retry before giving up.
+   for attempt=1,TELEPORT_ATTEMPTS do
+    if not stillHere() then return end
+    local options=Instance.new("TeleportOptions")
+    options:SetTeleportData(require(script.Parent.ForestProgressTransfer).Build(returning))
+    local ok,err=pcall(function() TeleportService:TeleportAsync(LOBBY_PLACE_ID,returning,options) end)
+    if ok then return end
+    warn("Return to lobby failed (attempt "..attempt.."/"..TELEPORT_ATTEMPTS.."): "..tostring(err))
+    if attempt<TELEPORT_ATTEMPTS then task.wait(2^attempt) end
+   end
+   -- The lobby would not take them: start another round here instead of leaving them stranded.
+   if stillHere() then requeue(returning) end
   end)
  end
 end
+-- Returns true when the round started. Otherwise false, plus true as a second value when the failed start was
+-- already cleaned up by endRound (players handled there); false alone means the players were left untouched.
 local function begin(batch)
  if active or #batch<1 then return false end
  local points={}
@@ -140,7 +169,7 @@ local function begin(batch)
  if not ok then
   warn("Round start failed: "..tostring(err))
   for i,p in batch do if characters[i].c.Parent then characters[i].c:PivotTo(characters[i].old) end p:SetAttribute("InRound",false) end
-  endRound() return false
+  endRound() return false,true
  end
  -- everyone's intro: the camera work runs on each player's machine, the looking round runs here
  for i,p in batch do
@@ -163,14 +192,14 @@ local function setup(p)
  p.RespawnLocation=lobbySpawn
  local ok,joinData=pcall(function() return p:GetJoinData() end)
  if ok and type(joinData)=="table" and joinData.SourcePlaceId==LOBBY_PLACE_ID then
-  lobbyArrivals[p]=true
+  lobbyArrivals[p]=workspace:GetServerTimeNow() -- arrival time: earliest arrivals get the places when a round is full
   lobbyArrivalFirstAt=lobbyArrivalFirstAt or workspace:GetServerTimeNow()
   local data=joinData.TeleportData
-  if type(data)=="table" and data.Mode=="LobbyQueue" then lobbyExpected=math.clamp(tonumber(data.Expected) or 1,1,11) end
+  if type(data)=="table" and data.Mode=="LobbyQueue" then lobbyExpected=math.clamp(tonumber(data.Expected) or 1,1,Core.MAX_PLAYERS) end
  end
  -- Direct joins and Studio tests enter the forest without a second lobby queue.
  if not lobbyArrivals[p] then
-  lobbyArrivals[p]=true
+  lobbyArrivals[p]=workspace:GetServerTimeNow()
   lobbyArrivalFirstAt=lobbyArrivalFirstAt or workspace:GetServerTimeNow()
  end
  local function characterAdded(c)
@@ -195,13 +224,22 @@ while true do
  local now=workspace:GetServerTimeNow()
  local delta=now-lastTick lastTick=now
  if picking and now>=picking.endsAt then
-  local list={}
+  local list,missed={},{}
   for _,p in picking.batch do
-   if p.Parent==Players then p:SetAttribute("PickingCamper",nil) p:SetAttribute("PickGroup",nil) if alive(p) then table.insert(list,p) end end
+   if p.Parent==Players then
+    p:SetAttribute("PickingCamper",nil) p:SetAttribute("PickGroup",nil)
+    if alive(p) then table.insert(list,p) else table.insert(missed,p) end
+   end
   end
   picking=nil
   config:SetAttribute("PickEndsAt",nil)
-  if #list==0 or not begin(list) then config:SetAttribute("RoundState","Lobby") end
+  local started,cleanedUp=false,false
+  if #list>0 then started,cleanedUp=begin(list) end
+  if not started then
+   config:SetAttribute("RoundState","Lobby")
+   if not cleanedUp then requeue(list) end
+  end
+  requeue(missed) -- connected but not alive when the camper pick ended (respawning): next round, not never
  end
  if active then
   local survivors=0
@@ -212,12 +250,17 @@ while true do
   if outcome then endRound(outcome) elseif Progression.InnocentsAlive()==0 then endRound(Van.AnyEscaped() and "Innocents" or "Monster") end
  end
  if not active and not picking and lobbyArrivalFirstAt then
-  local batch={}
-  for p in pairs(lobbyArrivals) do if alive(p) then table.insert(batch,p) end end
-  table.sort(batch,function(a,b) return a.UserId<b.UserId end)
-  if #batch>0 and (#batch>=lobbyExpected or now-lobbyArrivalFirstAt>=12) then
-   if launch(batch) then lobbyArrivals={}; lobbyArrivalFirstAt=nil; lobbyExpected=1 else lobbyArrivalFirstAt=now-9 end
-  elseif now-lobbyArrivalFirstAt>35 then lobbyArrivals={}; lobbyArrivalFirstAt=nil; lobbyExpected=1 end
+  local entries={}
+  for p,arrivedAt in pairs(lobbyArrivals) do table.insert(entries,{id=p,ready=alive(p)~=nil,arrivedAt=arrivedAt,tie=p.UserId}) end
+  -- launch once the expected players are all in and loaded, or when the arrival window runs out; at most 10 per round
+  local batch=Core.planLaunch(entries,now,lobbyArrivalFirstAt,lobbyExpected,math.min(Core.MAX_PLAYERS,spawnCapacity()),Core.ARRIVAL_WINDOW)
+  if batch then
+   if launch(batch) then
+    -- only the launched players leave the queue; anyone still loading or over the cap waits for the next round
+    lobbyArrivalFirstAt=Core.settle(lobbyArrivals,batch,now)
+    lobbyExpected=1
+   else lobbyArrivalFirstAt=now-9 end
+  elseif next(lobbyArrivals)==nil then lobbyArrivalFirstAt=nil lobbyExpected=1 end
  end
  local used={}
  for _,p in Players:GetPlayers() do clearMembership(p) end
