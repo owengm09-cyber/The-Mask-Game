@@ -7,6 +7,24 @@ local gui=script.Parent
 local left=gui.Survivors
 local right=gui.Loadout
 local lastState=nil
+local Clock=require(game:GetService("ReplicatedStorage"):WaitForChild("ForestClock"))
+-- Out of the round (eliminated, escaped, or between trials): say what is happening, instead of the lobby text this place
+-- no longer has. Set MaskSystem.OutBriefing = false to get the original screens back. Returns role text and objective text.
+local function sideInfo(config)
+ if not config or config:GetAttribute("OutBriefing")==false then return nil end
+ local ok,role,line=pcall(function()
+  local active=config:GetAttribute("MatchActive")==true
+  local state=player:GetAttribute("Escaped")==true and "Escaped" or (active and player:GetAttribute("Eliminated")==true) and "Eliminated" or nil
+  local alive=0
+  for _,p in ipairs(Players:GetPlayers()) do
+   local h=p.Character and p.Character:FindFirstChildOfClass("Humanoid")
+   if p:GetAttribute("InRound")==true and p:GetAttribute("HasMask")~=true and string.lower(tostring(p:GetAttribute("Role") or ""))~="killer" and h and h.Health>0 then alive+=1 end
+  end
+  return Clock.SideRole(state),Clock.SideLine(state,active,config:GetAttribute("RoundState"),alive,config:GetAttribute("RescueCompleted") or 0,config:GetAttribute("RescueTotal") or 0,config:GetAttribute("VanState"))
+ end)
+ if ok then return role,line end
+ return nil
+end
 local noticeVersion=0
 local function notify(message,detail)
  noticeVersion+=1 local version=noticeVersion
@@ -38,8 +56,10 @@ local function update()
  local inRound=player:GetAttribute("InRound")==true
  local killer=player:GetAttribute("HasMask")==true
  local role=player:GetAttribute("Role") or "Survivor"
- gui.Identity.Role.Text=not inRound and "LOBBY" or killer and "KILLER / THE MASK CHOSE YOU" or string.upper(tostring(role))
- left.Objective.Instruction.Text=not inRound and ("ENTER A READY ZONE • %d PLAYERS"):format(game:GetService("ReplicatedStorage"):GetAttribute("PlayersPerRound") or 6) or killer and "HUNT THE SURVIVORS" or (config and config:GetAttribute("VanState")=="Running" and "GET ON THE CAMP BUS" or maskState=="Worn" and "SURVIVE THE HUNT" or "RESTORE POWER AND FIX THE BUS")
+ local sideRole,sideLine
+ if not inRound then sideRole,sideLine=sideInfo(config) end -- only players who are out of the round pay for this
+ gui.Identity.Role.Text=not inRound and (sideRole or "LOBBY") or killer and "KILLER / THE MASK CHOSE YOU" or string.upper(tostring(role))
+ left.Objective.Instruction.Text=not inRound and (sideLine or ("ENTER A READY ZONE • %d PLAYERS"):format(game:GetService("ReplicatedStorage"):GetAttribute("PlayersPerRound") or 6)) or killer and "HUNT THE SURVIVORS" or (config and config:GetAttribute("VanState")=="Running" and "GET ON THE CAMP BUS" or maskState=="Worn" and "SURVIVE THE HUNT" or "RESTORE POWER AND FIX THE BUS")
  if inRound and lastState~=nil and lastState~=maskState then
   if maskState=="Worn" then notify("THE HUNT HAS BEGUN",killer and "The mask chose you." or "The killer is hunting. Stay alert.")
   else notify("THE MASK IS WAITING","Find the mask hidden in the forest.") end

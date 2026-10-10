@@ -14,15 +14,17 @@ label.Name="TrialStatus"
 constraint.MaxSize=Vector2.new(540,58)
 label.Size=UDim2.new(.7,0,0,58)
 while gui.Parent do
- time.Visible=p:GetAttribute("InRound")==true
+ -- eliminated or escaped players keep the banner (MaskSystem.OutBriefing = false restores the original)
+ local out=config:GetAttribute("OutBriefing")~=false and config:GetAttribute("MatchActive")==true and (p:GetAttribute("Eliminated")==true or p:GetAttribute("Escaped")==true)
+ time.Visible=p:GetAttribute("InRound")==true or out
  time.Text=Clock.Format(game.Lighting:GetAttribute("GameTimeHours") or Clock.StartHour)
 
  local zoneName=p:GetAttribute("ReadyZone")
  local lobbyZones=workspace:FindFirstChild("Lobby") and workspace.Lobby:FindFirstChild("ReadyZones")
   local zone=zoneName and lobbyZones and lobbyZones:FindFirstChild(zoneName)
- if p:GetAttribute("InRound") then
+ if p:GetAttribute("InRound") or out then
   local seconds=math.max(0,math.ceil((config:GetAttribute("RoundEndsAt") or workspace:GetServerTimeNow())-workspace:GetServerTimeNow()))
-  label.Text="FOREST TRIAL  •  "..string.upper(game.Lighting:GetAttribute("Phase") or "Day") label.Visible=true
+  label.Text="FOREST TRIAL  •  "..string.upper(game.Lighting:GetAttribute("Phase") or "Day")..(out and (p:GetAttribute("Escaped")==true and "  •  ESCAPED" or "  •  ELIMINATED") or "") label.Visible=true
  elseif zone then
   label.Text=tostring(zone:GetAttribute("Count") or 0).."/"..tostring(zone:GetAttribute("Capacity") or 6).."  •  "..(zone:GetAttribute("Status") or "Ready up").."  •  Walk out to leave"
   label.Visible=true

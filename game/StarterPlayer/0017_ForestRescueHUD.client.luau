@@ -75,7 +75,7 @@ local function drawList(r,list,on)
  r.count.TextColor3=done==n and n>0 and r.spec.done or white
 end
 local function refresh()
- bar.Visible=p:GetAttribute("InRound")==true
+ bar.Visible=p:GetAttribute("InRound")==true or (config:GetAttribute("OutBriefing")~=false and config:GetAttribute("MatchActive")==true and (p:GetAttribute("Eliminated")==true or p:GetAttribute("Escaped")==true))
  local lists={Power={},Van={}}
  for _,m in tasks:GetChildren() do local l=lists[m:GetAttribute("List") or "Power"] if l then table.insert(l,m) end end
  for _,l in lists do table.sort(l,function(a,b) return (a:GetAttribute("TaskId") or 0)<(b:GetAttribute("TaskId") or 0) end) end

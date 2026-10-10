@@ -11,4 +11,17 @@ function C.Format(hour)
  local h=math.floor(minutes/60)
  return string.format("%d:%02d %s",h%12==0 and 12 or h%12,minutes%60,h<12 and "AM" or "PM")
 end
+-- HUD text for a player who is not playing right now (DreadHUD). The label fits about 24 characters.
+-- state: "Eliminated", "Escaped" or nil (between trials, or joined while one is running).
+function C.SideRole(state) return state=="Eliminated" and "ELIMINATED" or state=="Escaped" and "ESCAPED" or "LOBBY" end
+function C.SideLine(state,matchActive,roundState,alive,done,total,van)
+ if state=="Escaped" then return "WAIT FOR THE BUS" end
+ if state=="Eliminated" then
+  local plan=van=="Running" and "BUS IS HERE" or van=="Gone" and "BUS HAS GONE" or ("PLAN "..done.."/"..total)
+  return alive.." LEFT • "..plan
+ end
+ if matchActive then return "JOINING NEXT TRIAL" end
+ if roundState=="Picking" then return "TRIAL STARTING" end
+ return "WAITING FOR PLAYERS"
+end
 return C

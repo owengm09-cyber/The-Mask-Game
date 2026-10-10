@@ -74,7 +74,9 @@ local function layout()
  survivors.Text.Text="SURVIVORS  /  "..left.Objective.Count.Text
  equipment.Text.Text="EQUIPMENT"
  for _,entry in sections do entry.Body.Visible=entry.Open entry.Icon.Rotation=entry.Open and 180 or 0 entry.Scale.Scale=s end
- tasks.Root.Size=UDim2.fromOffset(310,34) tasks.Root.Position=UDim2.fromOffset(margin,98) tasks.Root.Visible=p:GetAttribute("InRound")==true
+ local cfg=workspace:FindFirstChild("MaskSystem") -- eliminated or escaped players keep the escape plan (OutBriefing = false restores the original)
+ local out=cfg~=nil and cfg:GetAttribute("OutBriefing")~=false and cfg:GetAttribute("MatchActive")==true and (p:GetAttribute("Eliminated")==true or p:GetAttribute("Escaped")==true)
+ tasks.Root.Size=UDim2.fromOffset(310,34) tasks.Root.Position=UDim2.fromOffset(margin,98) tasks.Root.Visible=p:GetAttribute("InRound")==true or out
  account.Root.Size=UDim2.fromOffset(250,34) account.Root.Position=UDim2.new(1,-margin-250*s,0,small and 54 or 12)
  local y=bottom+(survivors.Open and (leftHeight+38)*s or 34*s)
  survivors.Root.Size=UDim2.fromOffset(258,34) survivors.Root.Position=UDim2.new(0,margin,1,-y)

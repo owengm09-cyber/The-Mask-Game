@@ -58,7 +58,7 @@ end
 local function round1(x) return x and math.floor(x*10+0.5)/10 or nil end
 function Q.telemetryNew(startedAt,players,roundId)
  return {round=roundId,startedAt=startedAt,players=players,killers={},killerCount=0,deaths=0,deathsWhileMasked=0,
-  killerDeaths=0,meetings=0,wasMeeting=false,escaped=0}
+  killerDeaths=0,meetings=0,wasMeeting=false,escaped=0,deathTimes={},quitsEliminated=0,quitsPlaying=0}
 end
 -- snap: {phase, killerUserId, rescueDone, rescueTotal, rescueWon, vanState, vanEscaped, meeting}
 function Q.telemetrySample(tm,now,snap)
@@ -84,13 +84,23 @@ end
 function Q.telemetryDeath(tm,now,snap)
  local t=now-tm.startedAt
  tm.deaths+=1
+ table.insert(tm.deathTimes,t)
  if not tm.firstDeathAt then tm.firstDeathAt=t end
  local killer=snap.killerUserId or 0
  if killer~=0 and snap.victimUserId==killer then tm.killerDeaths+=1
  elseif killer~=0 then tm.deathsWhileMasked+=1 end
 end
+-- a player in the round left the server (snap: {eliminated=boolean})
+function Q.telemetryQuit(tm,snap)
+ if snap.eliminated then tm.quitsEliminated+=1 else tm.quitsPlaying+=1 end
+end
 function Q.telemetrySummary(tm,now,winner,innocentsAlive)
- return {round=tm.round,players=tm.players,winner=winner or "none",duration=round1(now-tm.startedAt),
+ local duration=now-tm.startedAt
+ local waiting=0
+ for _,t in tm.deathTimes do waiting+=math.max(0,duration-t) end
+ local share=tm.players>0 and duration>0 and waiting/(tm.players*duration) or 0
+ return {eliminatedSeconds=round1(waiting),eliminatedShare=math.floor(share*100+0.5)/100,
+  quitsAfterElimination=tm.quitsEliminated,quitsWhilePlaying=tm.quitsPlaying,round=tm.round,players=tm.players,winner=winner or "none",duration=round1(now-tm.startedAt),
   firstNightAt=round1(tm.firstNightAt),firstMaskWornAt=round1(tm.firstKillerAt),killersSeen=tm.killerCount,
   firstDeathAt=round1(tm.firstDeathAt),deaths=tm.deaths,deathsWhileMasked=tm.deathsWhileMasked,killerDeaths=tm.killerDeaths,
   firstTaskAt=round1(tm.firstTaskAt),halfTasksAt=round1(tm.halfTasksAt),allTasksAt=round1(tm.allTasksAt),

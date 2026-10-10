@@ -106,6 +106,10 @@ local function telemetryDeath(p)
   Core.telemetryDeath(telemetry,workspace:GetServerTimeNow(),snap)
  end) then telemetry=nil end
 end
+local function telemetryQuit(p)
+ if not telemetry or not active or not table.find(active.players,p) then return end
+ pcall(function() Core.telemetryQuit(telemetry,{eliminated=p:GetAttribute("Eliminated")==true}) end)
+end
 local function telemetryFinish(winner)
  local tm=telemetry telemetry=nil
  if not tm then return end
@@ -130,7 +134,7 @@ local function endRound(winner)
  Mask.ResetRound()
  for _,p in previous.players do
   if p.Parent==Players then
-   p:SetAttribute("InRound",false) p:SetAttribute("RoundId",nil) clearMembership(p)
+   p:SetAttribute("InRound",false) p:SetAttribute("RoundId",nil) p:SetAttribute("Eliminated",nil) clearMembership(p)
    local c,h,r=alive(p)
    if c then
     h.Sit=false c:PivotTo(lobbySpawn.CFrame*CFrame.new(0,4,0))
@@ -190,7 +194,7 @@ local function begin(batch)
   Mask.ResetRound()
   for i,p in batch do
    local a=characters[i]
-   p:SetAttribute("InRound",true) p:SetAttribute("RoundId",serial) p:SetAttribute("Role","Survivor") clearMembership(p)
+   p:SetAttribute("InRound",true) p:SetAttribute("RoundId",serial) p:SetAttribute("Role","Survivor") p:SetAttribute("Eliminated",nil) clearMembership(p)
    a.h.Sit=false
    -- stand them right on the spawn pad (feet on the top), so nobody hangs in the air during the intro
    local stand=a.h.HipHeight+a.r.Size.Y/2+0.05
@@ -226,7 +230,7 @@ local function launch(batch)
  return true
 end
 local function setup(p)
- p:SetAttribute("InRound",false) p:SetAttribute("RoundId",nil) clearMembership(p)
+ p:SetAttribute("InRound",false) p:SetAttribute("RoundId",nil) p:SetAttribute("Eliminated",nil) clearMembership(p)
  p.RespawnLocation=lobbySpawn
  local ok,joinData=pcall(function() return p:GetJoinData() end)
  if ok and type(joinData)=="table" and joinData.SourcePlaceId==LOBBY_PLACE_ID then
@@ -244,7 +248,7 @@ local function setup(p)
   p:SetAttribute("InRound",false) p:SetAttribute("RoundId",nil) clearMembership(p)
   local h=c:WaitForChild("Humanoid",10)
   if h then h.Died:Connect(function()
-   if p:GetAttribute("InRound") then telemetryDeath(p) end
+   if p:GetAttribute("InRound") then telemetryDeath(p) p:SetAttribute("Eliminated",true) end -- read by the HUD: out of this trial, not in the lobby
    p:SetAttribute("InRound",false) clearMembership(p)
   end) end
  end
@@ -253,7 +257,7 @@ local function setup(p)
 end
 for _,p in Players:GetPlayers() do setup(p) end
 Players.PlayerAdded:Connect(setup)
-Players.PlayerRemoving:Connect(function(p) clearMembership(p); lobbyArrivals[p]=nil end)
+Players.PlayerRemoving:Connect(function(p) telemetryQuit(p); clearMembership(p); lobbyArrivals[p]=nil end)
 config:SetAttribute("MatchActive",false)
 config:SetAttribute("RoundState","Lobby")
 Mask.ResetRound()
