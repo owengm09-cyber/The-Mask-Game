@@ -222,7 +222,10 @@ function M.Start()
   local data=participants[p] if data then releaseParticipant(p,data) participants[p]=nil end
  end)
  config:GetAttributeChangedSignal("MatchActive"):Connect(function()
-  if config:GetAttribute("MatchActive")~=true then M.EndMeeting() if holder then returnGun() end end
+  if config:GetAttribute("MatchActive")~=true then
+   M.EndMeeting() if holder then returnGun() end
+   readyAt=0 -- the flare cooldown belongs to the round it was fired in
+  end
  end)
  returnGun()
  task.spawn(function() while camp.Parent do refresh() task.wait(.25) end end)

@@ -88,6 +88,47 @@ test("an emptied queue clears its first-arrival time",function()
  assert(Q.settle(arrivals,{"a"},50)==nil)
 end)
 
+test("telemetry records milestone times once and the winner",function()
+ local tm=Q.telemetryNew(1000,9,7)
+ local snap={phase="Day",killerUserId=0,rescueDone=0,rescueTotal=19,rescueWon=false,vanState=nil,vanEscaped=0,meeting=false}
+ Q.telemetrySample(tm,1010,snap)
+ snap.rescueDone=1 Q.telemetrySample(tm,1060,snap)
+ snap.rescueDone=10 Q.telemetrySample(tm,1200,snap)
+ snap.rescueDone=19 snap.rescueWon=true snap.vanState="Running" Q.telemetrySample(tm,1500,snap)
+ snap.rescueDone=19 Q.telemetrySample(tm,1600,snap) -- later samples must not move earlier milestones
+ snap.phase="Night" snap.killerUserId=42 Q.telemetrySample(tm,1660,snap)
+ snap.vanEscaped=3 Q.telemetrySample(tm,1700,snap)
+ local s=Q.telemetrySummary(tm,1710,"Innocents",4)
+ assert(s.round==7 and s.players==9 and s.winner=="Innocents" and s.duration==710)
+ assert(s.firstTaskAt==60 and s.halfTasksAt==200 and s.allTasksAt==500 and s.busAt==500)
+ assert(s.firstNightAt==660 and s.firstMaskWornAt==660 and s.killersSeen==1)
+ assert(s.tasksDone==19 and s.tasksTotal==19 and s.escaped==3 and s.innocentsAlive==4)
+end)
+
+test("telemetry separates deaths with and without a mask holder, and the killer's own death",function()
+ local tm=Q.telemetryNew(0,5,1)
+ Q.telemetryDeath(tm,30,{killerUserId=0,victimUserId=1})   -- before any mask
+ Q.telemetryDeath(tm,700,{killerUserId=9,victimUserId=2})  -- killed while the mask is worn
+ Q.telemetryDeath(tm,720,{killerUserId=9,victimUserId=9})  -- the killer dies
+ local s=Q.telemetrySummary(tm,800,"Monster",0)
+ assert(s.deaths==3 and s.firstDeathAt==30 and s.deathsWhileMasked==1 and s.killerDeaths==1)
+end)
+
+test("telemetry counts each contiguous meeting once and tracks several killers",function()
+ local tm=Q.telemetryNew(0,4,1)
+ for _,m in {false,true,true,false,true} do Q.telemetrySample(tm,1,{meeting=m}) end
+ Q.telemetrySample(tm,2,{killerUserId=5}) Q.telemetrySample(tm,3,{killerUserId=6}) Q.telemetrySample(tm,4,{killerUserId=5})
+ local s=Q.telemetrySummary(tm,10,nil,2)
+ assert(s.meetings==2 and s.killersSeen==2 and s.winner=="none")
+end)
+
+test("a round with no mask and no tasks reports missing milestones as absent",function()
+ local tm=Q.telemetryNew(0,2,1)
+ Q.telemetrySample(tm,5,{phase="Day"})
+ local s=Q.telemetrySummary(tm,6,"Monster",1)
+ assert(s.firstNightAt==nil and s.firstMaskWornAt==nil and s.allTasksAt==nil and s.busAt==nil and s.killersSeen==0)
+end)
+
 test("zone queue behaviour is unchanged",function()
  local state=Q.new()
  local count,remaining,launch=Q.step(state,{"a","b"},0,false,2)

@@ -3,6 +3,8 @@ local Rescue=require(script.Parent.ForestRescueService)
 local Players=game:GetService("Players")
 local TeleportService=game:GetService("TeleportService")
 local RunService=game:GetService("RunService")
+local HttpService=game:GetService("HttpService")
+local Lighting=game:GetService("Lighting")
 local LOBBY_PLACE_ID=73347091467818
 local lobbyArrivals={}
 local lobbyArrivalFirstAt=nil
@@ -81,9 +83,44 @@ local function spawnCapacity()
  return n
 end
 local TELEPORT_ATTEMPTS=4
+-- Development-only balance telemetry (state machine: ReadyQueueCore.telemetry*). One JSON line per round, printed and
+-- stored in MaskSystem.LastRoundSummary, in Studio or when MaskSystem.BalanceLog is true. It never throws into round
+-- management, stores nothing and touches no player data.
+local telemetry=nil
+local function telemetrySnapshot()
+ return {phase=Lighting:GetAttribute("Phase"),killerUserId=config:GetAttribute("KillerUserId"),
+  rescueDone=config:GetAttribute("RescueCompleted"),rescueTotal=config:GetAttribute("RescueTotal"),rescueWon=config:GetAttribute("RescueWon"),
+  vanState=config:GetAttribute("VanState"),vanEscaped=config:GetAttribute("VanEscaped"),meeting=config:GetAttribute("MeetingActive")}
+end
+local function telemetryBegin(batch)
+ telemetry=nil
+ if not (RunService:IsStudio() or config:GetAttribute("BalanceLog")==true) then return end
+ pcall(function() telemetry=Core.telemetryNew(workspace:GetServerTimeNow(),#batch,serial) end)
+end
+local function telemetrySample(now)
+ if telemetry and not pcall(function() Core.telemetrySample(telemetry,now,telemetrySnapshot()) end) then telemetry=nil end
+end
+local function telemetryDeath(p)
+ if telemetry and not pcall(function()
+  local snap=telemetrySnapshot() snap.victimUserId=p.UserId
+  Core.telemetryDeath(telemetry,workspace:GetServerTimeNow(),snap)
+ end) then telemetry=nil end
+end
+local function telemetryFinish(winner)
+ local tm=telemetry telemetry=nil
+ if not tm then return end
+ pcall(function()
+  local now=workspace:GetServerTimeNow()
+  Core.telemetrySample(tm,now,telemetrySnapshot())
+  local json=HttpService:JSONEncode(Core.telemetrySummary(tm,now,winner,Progression.InnocentsAlive()))
+  config:SetAttribute("LastRoundSummary",json)
+  print("[BalanceLog] "..json)
+ end)
+end
 local function endRound(winner)
  if not active then return end
  local previous=active active=nil
+ telemetryFinish(winner)
  config:SetAttribute("LastRoundWinner",winner)
  Rescue.End()
  Progression.Finish(winner)
@@ -176,6 +213,7 @@ local function begin(batch)
   introRemote:FireClient(p,{seconds=INTRO_SECONDS,spawn=points[i].CFrame})
   task.spawn(lookAround,characters[i].c)
  end
+ telemetryBegin(batch)
  return true
 end
 -- a group ready to play: first the camper picker, then (in the main loop) begin()
@@ -206,6 +244,7 @@ local function setup(p)
   p:SetAttribute("InRound",false) p:SetAttribute("RoundId",nil) clearMembership(p)
   local h=c:WaitForChild("Humanoid",10)
   if h then h.Died:Connect(function()
+   if p:GetAttribute("InRound") then telemetryDeath(p) end
    p:SetAttribute("InRound",false) clearMembership(p)
   end) end
  end
@@ -245,6 +284,7 @@ while true do
   local survivors=0
   for _,p in active.players do if p:GetAttribute("InRound") and alive(p) then survivors+=1 end end
   config:SetAttribute("RoundPlayersRemaining",survivors)
+  telemetrySample(now)
   if config:GetAttribute("MeetingActive")~=true then Progression.Tick(delta) end
   local outcome=Van.Outcome()
   if outcome then endRound(outcome) elseif Progression.InnocentsAlive()==0 then endRound(Van.AnyEscaped() and "Innocents" or "Monster") end
