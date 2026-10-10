@@ -1,0 +1,3063 @@
+{
+  "base_sha256": "2da3c4dfcc2cb2add4e1b669afba4277b5d570e5c543ac6df57523e3999f3950",
+  "scripts": [
+    {
+      "file": "game/Workspace/0001_CabinAmbience.server.luau",
+      "path": [
+        "Workspace",
+        "SummerCampCabins",
+        "CabinAmbience"
+      ],
+      "referent": "RBX0C7919C170FC422A8814DAE28303AD65",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "faa25598ce13290bbb6bc869caab12bc979303fda7caf8510332821e9f9dd920"
+    },
+    {
+      "file": "game/Workspace/0002_PosFix.client.luau",
+      "path": [
+        "Workspace",
+        "open me",
+        "HealthUi",
+        "PosFix"
+      ],
+      "referent": "RBX09B0858B7CAA48B39C19211E77A2FEAF",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "true",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "f102cad6839208b1a452657f6656602b8b0d84b06c5eb6973cf7b2053addfa61"
+    },
+    {
+      "file": "game/Workspace/0003_Main.server.luau",
+      "path": [
+        "Workspace",
+        "open me",
+        "HealthUi",
+        "HealthGui",
+        "Main"
+      ],
+      "referent": "RBX2684177976D44B5A8B43D42CBDE9F6EB",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "2"
+      },
+      "sha256": "60d680a499bd8f5a44647d8f485e3bbff6ec882ccf939b9d998f4b6b915173dc"
+    },
+    {
+      "file": "game/Workspace/0004_InSprint.client.luau",
+      "path": [
+        "Workspace",
+        "StaminaGui",
+        "Handler",
+        "InSprint"
+      ],
+      "referent": "RBXDE65ED8F51404F5E82CABCEF24D9626F",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "true",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "55595a8a0dab9a172db4c496bc2db3b01a49a3cfcb5ba10b2f9c8fb646244ba9"
+    },
+    {
+      "file": "game/Workspace/0005_OutSprint.client.luau",
+      "path": [
+        "Workspace",
+        "StaminaGui",
+        "Handler",
+        "OutSprint"
+      ],
+      "referent": "RBX3029100D2D524340974585B3CD780E34",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "364b2055a7cccb45d92c8dc9cd9fffaf4e85fe513bf5a5b7f98578d1914f7770"
+    },
+    {
+      "file": "game/Workspace/0006_Handler.client.luau",
+      "path": [
+        "Workspace",
+        "StaminaGui",
+        "Handler"
+      ],
+      "referent": "RBXBD0AF33C28394891B191DDBB47767C24",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "fefefd3192ded6827affe6ae257a1858741b8e472b09ee3c85251d1e27b999b5"
+    },
+    {
+      "file": "game/StarterPlayer/0007_MaskHUD.client.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "MaskHUD"
+      ],
+      "referent": "RBX1DE905A54CD74C86B26B7BC6071BDD10",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "true",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "48984a02b036834b2d6441468c4e15d363cf6807b9fec6befec719df116634dc"
+    },
+    {
+      "file": "game/StarterPlayer/0008_HUDToggle.client.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "HUDToggle"
+      ],
+      "referent": "RBX8DB9BB9C53E242E4A477827F91AE0BB3",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "a98149146342837cb5c9c43cbc1131c688ef0c1ef3f9b534cccd42cdb91908ed"
+    },
+    {
+      "file": "game/StarterPlayer/0009_CreatureAnimator.client.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "CreatureAnimator"
+      ],
+      "referent": "RBXDF20E11DA0004054939089F5B715974A",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "cb741731877b8011fb8dddc27750bfae10fccca65171682d55907e0ca2b35b71"
+    },
+    {
+      "file": "game/StarterPlayer/0010_RoundStatusHUD.client.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "RoundStatusHUD"
+      ],
+      "referent": "RBXA0D9F5B94CE448C1AF6A05013312D98E",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "d821e49b8cffb0ecd776cbf248bc3d48e32a2f7ea04406aaaab923ec2e61fe97"
+    },
+    {
+      "file": "game/StarterPlayer/0011_MeetingHUD.client.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "MeetingHUD"
+      ],
+      "referent": "RBX0EFFE2471A224B4A94C38096702C85AD",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "ef425c13c4246ce8cbc2f11acac241ab13dbe8e891284904bd5598b139c997a6"
+    },
+    {
+      "file": "game/StarterPlayer/0012_MeetingPlaytestClient.client.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "MeetingPlaytestClient"
+      ],
+      "referent": "RBX8C399D2A6D4C483DB3C84980BEA67713",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "26962d85594f082ecfb0b8110ec154564ccbf675a005ac7aac47b70a7332f253"
+    },
+    {
+      "file": "game/StarterPlayer/0013_ProgressionHUD.client.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "ProgressionHUD"
+      ],
+      "referent": "RBX6389B216109A4648982CF0B658616C69",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "5ab88eb9b7d7c7a8b67427c89c31e37918e1e77b3eda765f7837b22b89f8d038"
+    },
+    {
+      "file": "game/StarterPlayer/0014_GamesA.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "ForestRescueHUD",
+        "TaskWindow",
+        "GamesA"
+      ],
+      "referent": "RBXE5165B53B68B4E88AAB571034A806DF3",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "804bcd9cdac0845f0c84f64c52293221e6258912bb6aefc6c1f1709bf393d0bd"
+    },
+    {
+      "file": "game/StarterPlayer/0015_GamesB.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "ForestRescueHUD",
+        "TaskWindow",
+        "GamesB"
+      ],
+      "referent": "RBXE40A9ABBE0B641929DADBFA2C2D92AC2",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "41518215ff12c7fffe1fd5947294dc13992dc50ee59ae7438f73ad85f3f386cd"
+    },
+    {
+      "file": "game/StarterPlayer/0016_TaskWindow.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "ForestRescueHUD",
+        "TaskWindow"
+      ],
+      "referent": "RBXE3E54076B4C34136819067412D3881D3",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "59d01331fb72e3d7c884e2754cdc614137ecd397a06014d4f93275b695e945c4"
+    },
+    {
+      "file": "game/StarterPlayer/0017_ForestRescueHUD.client.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "ForestRescueHUD"
+      ],
+      "referent": "RBXF6A2BAE28D224194812977927D224755",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "0bdbf13d391538afcbb94732131481fba5c83933b0aa2a91e295591904d9c641"
+    },
+    {
+      "file": "game/StarterPlayer/0018_ForestCompass.client.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "ForestCompass"
+      ],
+      "referent": "RBXDF0DBB3473E643CBAC6FB618BAA7DB5C",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "163a694802341f2b666d8eefbdcfaaaac069900eceaa0eda48bb3fe047a89680"
+    },
+    {
+      "file": "game/StarterPlayer/0019_ZoltarFortuneClient.client.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "ZoltarFortuneClient"
+      ],
+      "referent": "RBXA0D199785776488EABC68D45015BDAD0",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "a8eb59747938d9aa0f1d860e0d5fb47820e7f90d434b12b10b855452472f69e7"
+    },
+    {
+      "file": "game/StarterPlayer/0020_MoinsShopHUD.client.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "MoinsShopHUD"
+      ],
+      "referent": "RBXA74AC4B5791144E0BCAE845583D78F9E",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "true",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "e205b4ab6ed926b0bdc4a9b97eb856d790e45f6c4d79b999e000bbdcddd7c226"
+    },
+    {
+      "file": "game/StarterPlayer/0021_RescueCompletionFX.client.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "RescueCompletionFX"
+      ],
+      "referent": "RBXB3640ABB6D524399B5AE67DDF59D07CD",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "df5954f0381fd6fb30626c1faa151649ef291f573ac706f924bbf02558ea9895"
+    },
+    {
+      "file": "game/StarterPlayer/0022_CampHUDLayout.client.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "CampHUDLayout"
+      ],
+      "referent": "RBX7DCE387EC97F4E80B56A67314C0C5952",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "eb48216c070904badfb987735f7346294fafd849698facdb28078872f22a5b12"
+    },
+    {
+      "file": "game/StarterPlayer/0023_KillerVentClient.client.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "KillerVentClient"
+      ],
+      "referent": "RBXD656A08887C84780B3C78CD1F91E16BA",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "3ea47177aa7a25f1d6834eb3cb391984f26154c9ed35e63f0792af1767210861"
+    },
+    {
+      "file": "game/StarterPlayer/0024_FlashlightBatteryHUD.client.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "FlashlightBatteryHUD"
+      ],
+      "referent": "RBX094A829CACD74F91B9147834A976BB7C",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "4bc85e028aab6a03210198155740b74e44a45449ec4ab5128d28ae7794e14c4b"
+    },
+    {
+      "file": "game/StarterPlayer/0025_FlareCinematicClient.client.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "FlareCinematicClient"
+      ],
+      "referent": "RBXC5E88E9D37F648419F7C0ED7CC160D6E",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "b8c9e1e0f204eb7850d0745a92b05d602e3d50f734a45252df0e8865813c3618"
+    },
+    {
+      "file": "game/StarterPlayer/0026_MeetingTablet.client.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "MeetingTablet"
+      ],
+      "referent": "RBX48E832E0F6A04CC8AABD66DE82B7C63A",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "02e1e9856e447d0ad41a89867616da86d7560c61999e8ec09e6c035fe3d16119"
+    },
+    {
+      "file": "game/StarterPlayer/0027_BarrierContactClient.client.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "BarrierContactClient"
+      ],
+      "referent": "RBXD674D3BE92704249BF735BF99D0EE354",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "6b185ba6ff07d9351827cd9e40b80845418516e892dbdb0b55b5e4731fcb1d26"
+    },
+    {
+      "file": "game/StarterPlayer/0028_GraveyardClient.client.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "GraveyardClient"
+      ],
+      "referent": "RBX9BEC161162F14D15994D5CD639A79C81",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "25b6dda11ca17442bc58de776b76f85b9234230703124fc801c6936ceb88e574"
+    },
+    {
+      "file": "game/StarterPlayer/0029_KillerClient.client.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "KillerClient"
+      ],
+      "referent": "RBX1F456F4C247C4EBA9206F1D04BDF1367",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "ed797cd5401d90a5cfa056272e378dfc441523b013924a62b7169b68b2ed0186"
+    },
+    {
+      "file": "game/StarterPlayer/0030_CounselorPicker.client.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "CounselorPicker"
+      ],
+      "referent": "RBXB051C279492F45C29717B652F1425C2B",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "38b83a0532cb6e82314397947462d299533243c6b5502ab7ddafd004c2fd85da"
+    },
+    {
+      "file": "game/StarterPlayer/0031_RadioTowerClient.client.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "RadioTowerClient"
+      ],
+      "referent": "RBXF2271576DC4045AB9294279BEAC9B182",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "0a144262bb4d39d84a13e1d42322b8e0b8b48ab0bb3bc0a7564fd1783b911ee5"
+    },
+    {
+      "file": "game/StarterPlayer/0032_EscapeVanClient.client.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "EscapeVanClient"
+      ],
+      "referent": "RBXF7D93E7FFD414C398996ECDD320D1ECF",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "c31030bc58c4d142e3859473292290c7bdf7ad8adc11ba43e443d4dd82673837"
+    },
+    {
+      "file": "game/StarterPlayer/0033_RoundIntroClient.client.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "RoundIntroClient"
+      ],
+      "referent": "RBX437BEFEF27D64E79A7F903D0DE2F1AF3",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "a7741938cd8d9e8a59639935a970f4eb5105972765d78ead19c1516c25f09734"
+    },
+    {
+      "file": "game/StarterPlayer/0034_CampfireFlicker.client.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "CampfireFlicker"
+      ],
+      "referent": "RBX6A120AA211964A829AFFF45EDE0AB45B",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "44641286ab19c204269bf1b796674c23a3971ba045cf8b02db0bdfb1c71fce74"
+    },
+    {
+      "file": "game/StarterPlayer/0035_CampHotbar.client.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "CampHotbar"
+      ],
+      "referent": "RBX469C72D8D920494889E3239DDBCA73C9",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "0b6cd32ad185c4a1c5933ed3235aba27398494c9be2b80e7bde694d17da10dd5"
+    },
+    {
+      "file": "game/StarterPlayer/0036_CharacterBlink.client.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "CharacterBlink"
+      ],
+      "referent": "RBX77D4EA46209445218AE4B9C6A6CA771A",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "98f1c4bc0167401d6ea0b3142abf1aac8cbe7d051d3b42c7c3994f3e720ff8b3"
+    },
+    {
+      "file": "game/StarterPlayer/0037_FirstPersonHands.client.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "FirstPersonHands"
+      ],
+      "referent": "RBX432865AC7173448D9E28E35C23F6BE81",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "f82e22f53535769a36c40a5d5e16fe69598a9fcb31b2c031fae0b1eb1fe31724"
+    },
+    {
+      "file": "game/StarterPlayer/0038_Client.client.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "Client"
+      ],
+      "referent": "RBXB1A4A479BC614D6087678BDAED16D6A3",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "136dfb79a37a69dff7af66ef2cc6a1f3a628980fdb9d5d8fa9110418d1fcce98"
+    },
+    {
+      "file": "game/StarterPlayer/0039_Animate.client.luau",
+      "path": [
+        "StarterPlayer",
+        "StarterCharacter",
+        "Animate"
+      ],
+      "referent": "RBX1B72051D7A9F4C029C061507BF5DF811",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "49eab7530cfc33b8af13b995ae1fa87f482a489b6d108ec2410d12dd19b720f0"
+    },
+    {
+      "file": "game/StarterPack/0040_Client.client.luau",
+      "path": [
+        "StarterPack",
+        "Flashlight",
+        "Client"
+      ],
+      "referent": "RBX9A3751EFF32D4891A43E4C744A9C9036",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "a16660c5603eea7678e7425fcd658993bca38caac1a29e769c243b947c3f4655"
+    },
+    {
+      "file": "game/StarterPack/0041_Server.server.luau",
+      "path": [
+        "StarterPack",
+        "Flashlight",
+        "Server"
+      ],
+      "referent": "RBXD1EA7DE46605457092029910ACAE02C5",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "31ecd852f7f71d1c6ac306cbc6fb0ec878ea8694147ea3445e1a1d000df982f9"
+    },
+    {
+      "file": "game/StarterGui/0042_HUDController.client.luau",
+      "path": [
+        "StarterGui",
+        "DreadHUD",
+        "HUDController"
+      ],
+      "referent": "RBX07CA29DF38AF495387CAA99BAB2656B6",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "cda0b1c316adad926ecb9fba35157899fc4c0bed2aaa8e33f24c0fa8e2038278"
+    },
+    {
+      "file": "game/ReplicatedStorage/0043_CreatureRig.luau",
+      "path": [
+        "ReplicatedStorage",
+        "CreatureRig"
+      ],
+      "referent": "RBX119E47EBF7A14E20BF1D66101DA1B2BA",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "afe46d5047c7b3b3b1f871d6f3ec87369c2d736699f5d504c3da7612dfc6c44b"
+    },
+    {
+      "file": "game/ReplicatedStorage/0044_FortuneConfig.luau",
+      "path": [
+        "ReplicatedStorage",
+        "FortuneConfig"
+      ],
+      "referent": "RBX9AADB67035E44FD4B777B0E9B3AE47EE",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "55a62a8ffe528d2727a79e4c0f7844f3103f05e7b3982f8902a87b2c73f386de"
+    },
+    {
+      "file": "game/ReplicatedStorage/0045_FortuneView.luau",
+      "path": [
+        "ReplicatedStorage",
+        "FortuneView"
+      ],
+      "referent": "RBX8BBCA5A0CBC34A5BBF4DFFFFFF7E7237",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "6f7e981a523b074de5a9c1faf406398b079b76c809a1b9f5b08ba6426e8a630f"
+    },
+    {
+      "file": "game/ReplicatedStorage/0046_MoinsShopConfig.luau",
+      "path": [
+        "ReplicatedStorage",
+        "MoinsShopConfig"
+      ],
+      "referent": "RBX057DC368781C4558B734A51F6210AA94",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "df8abc7e16f57857664c36e04203f72226e150937030f23d6a0d319c26852bf2"
+    },
+    {
+      "file": "game/ReplicatedStorage/0047_VentTunnel.luau",
+      "path": [
+        "ReplicatedStorage",
+        "VentTunnel"
+      ],
+      "referent": "RBX0282E471CD53455B9942DA6992B9118E",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "04cdad295029e8accc733cfe3bb3ba8f1da7d5baf321ac8c19275c14a0c7e6fe"
+    },
+    {
+      "file": "game/ReplicatedStorage/0048_BarrierRipple.luau",
+      "path": [
+        "ReplicatedStorage",
+        "BarrierRipple"
+      ],
+      "referent": "RBX78C07F50FEE24FAB816D5892D89455D4",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "788afc62fefddb84b4af77230346eea6e683263f362696c487902da235b2a9ea"
+    },
+    {
+      "file": "game/ReplicatedStorage/0049_ForestClock.luau",
+      "path": [
+        "ReplicatedStorage",
+        "ForestClock"
+      ],
+      "referent": "RBX958BD189CD9949809A71142DFA22FE99",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "966c192d3abf7d391314f7a432595a2bca2ea14e1b60512840d62342dbc4266e"
+    },
+    {
+      "file": "game/ReplicatedStorage/0050_GamePassConfig.luau",
+      "path": [
+        "ReplicatedStorage",
+        "GamePassConfig"
+      ],
+      "referent": "RBX4391CBA29FF241C0971B00D3DF44E636",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "8ab1761ee3c29cdb24ec05038aec39d306a84191999d27e8ffb57e71b69263b4"
+    },
+    {
+      "file": "game/ReplicatedStorage/0051_FortuneRoll.luau",
+      "path": [
+        "ReplicatedStorage",
+        "FortuneRoll"
+      ],
+      "referent": "RBXC3608D90D08345DC861D26C46F21F8CB",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "4ca68cf096837794cd27c75c8b018e3ff38961e00d85ed0b3a3e54ba545ff865"
+    },
+    {
+      "file": "game/ReplicatedStorage/0052_ViewHands.luau",
+      "path": [
+        "ReplicatedStorage",
+        "ViewHands"
+      ],
+      "referent": "RBX7D6B9885AD3A4EDB871BD89A67C690F9",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "1844532be8b667fa92659ab54297c5e77af26d8cc2411405de5250f38b83756d"
+    },
+    {
+      "file": "game/ReplicatedStorage/0053_Hello.luau",
+      "path": [
+        "ReplicatedStorage",
+        "Shared",
+        "Hello"
+      ],
+      "referent": "RBXB41572E4737C42E48AAFAC0B6638A8F4",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "68de9377a853c5dd3863901c12e8f29802b9d6d3dd01b99e44a8d332755cca8f"
+    },
+    {
+      "file": "game/ServerScriptService/0054_MaskService.luau",
+      "path": [
+        "ServerScriptService",
+        "MaskService"
+      ],
+      "referent": "RBX79AEA237ECC741CC850FDDF27C52FA0B",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "a6b3d2f68bc435e240ba5045f8ae8d2beef032a203cafad77d5cd198ecacf06d"
+    },
+    {
+      "file": "game/ServerScriptService/0055_MaskBootstrap.server.luau",
+      "path": [
+        "ServerScriptService",
+        "MaskBootstrap"
+      ],
+      "referent": "RBX25E889C96ABE4B02A9E1208B85787689",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "c713fc4707098b969bc2e207b8d103a0bae63c4773a6c16868db9b7ea56f4d1b"
+    },
+    {
+      "file": "game/ServerScriptService/0056_DayNightCycle.server.luau",
+      "path": [
+        "ServerScriptService",
+        "DayNightCycle"
+      ],
+      "referent": "RBXA3622C2C96E74479A1BAFF45E0112B6E",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "d7ba61fe6dbe67aa377176051a5052ec6ab4afe35eeaed3a4e601aff20059105"
+    },
+    {
+      "file": "game/ServerScriptService/0057_CreatureServer.server.luau",
+      "path": [
+        "ServerScriptService",
+        "CreatureServer"
+      ],
+      "referent": "RBX08A5216A8876408891DB4F7132B2952F",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "e952c0d274b89bb13810398021f0b23bab0c1bf00e12f6359a92516c4ad421eb"
+    },
+    {
+      "file": "game/ServerScriptService/0058_ReadyQueueCore.luau",
+      "path": [
+        "ServerScriptService",
+        "ReadyQueueCore"
+      ],
+      "referent": "RBX78166FC7D88745F89DD04E6C7CC7D8CC",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "573e23180111346a4af45a7b5c3bbfd7301c2a8deb17579af18339182a970d4d"
+    },
+    {
+      "file": "game/ServerScriptService/0059_ReadyQueueServer.server.luau",
+      "path": [
+        "ServerScriptService",
+        "ReadyQueueServer"
+      ],
+      "referent": "RBX6F0E56CC945E49D2A477F00ECD8789CF",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "1b7a71d255d6ef43aff2df639af69db2ad8be4a0a691aceae6b1e2f115587caf"
+    },
+    {
+      "file": "game/ServerScriptService/0060_HarlequinPlaytest.server.luau",
+      "path": [
+        "ServerScriptService",
+        "HarlequinPlaytest"
+      ],
+      "referent": "RBX45EB627233D7479C9A6B326841956616",
+      "class": "Script",
+      "properties": {
+        "Disabled": "true",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "8aead7484044c3df3952a00b8a34413f75a1b479fe4ced87fc3b00b64dd9d2b5"
+    },
+    {
+      "file": "game/ServerScriptService/0061_MeetingService.luau",
+      "path": [
+        "ServerScriptService",
+        "MeetingService"
+      ],
+      "referent": "RBXE241767F3E3E42E180BBC854E8EE9ECF",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "90f0e7e203e7a81c937c7bc82ef32ab678b1d8957135f1a49f25db662a9e0612"
+    },
+    {
+      "file": "game/ServerScriptService/0062_MeetingBootstrap.server.luau",
+      "path": [
+        "ServerScriptService",
+        "MeetingBootstrap"
+      ],
+      "referent": "RBXF28A10775E7C4872BCB83EBB9D7AF1C9",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "66721f157a4a99224ae340e59c5f41e9af493480437f79a41238eebda3a76081"
+    },
+    {
+      "file": "game/ServerScriptService/0063_MeetingPlaytest.server.luau",
+      "path": [
+        "ServerScriptService",
+        "MeetingPlaytest"
+      ],
+      "referent": "RBX2BDD4EBB2F8E4BD9B4D403B977E4B623",
+      "class": "Script",
+      "properties": {
+        "Disabled": "true",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "fc4deeddfc13c7c9f7935bc88ad911cd5fec78af40918606544f00e5d25c6838"
+    },
+    {
+      "file": "game/ServerScriptService/0064_ProgressionMath.luau",
+      "path": [
+        "ServerScriptService",
+        "ProgressionMath"
+      ],
+      "referent": "RBX10302558502848CC9C6C525D779F7D45",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "e4b7f275208fdfa02ef57f4966c83b53b140fa2eb5dbb63ff9bfa22d6115050b"
+    },
+    {
+      "file": "game/ServerScriptService/0065_ProgressionService.luau",
+      "path": [
+        "ServerScriptService",
+        "ProgressionService"
+      ],
+      "referent": "RBX80AE151C8E0C4E77A182458C55B7B44E",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "4d757eb980c004480c83a118a96817e7a8f57a309e50dc1520b0428bd225c81f"
+    },
+    {
+      "file": "game/ServerScriptService/0066_FlashlightBatteryService.server.luau",
+      "path": [
+        "ServerScriptService",
+        "FlashlightBatteryService"
+      ],
+      "referent": "RBX12A40ABA93704FAEA54464E73FE79C55",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "4fdb97de41a3c7ce1479dde910b1d64f6bc395a7995fae7723d73d10e3c589ca"
+    },
+    {
+      "file": "game/ServerScriptService/0067_ForestTasks.server.luau",
+      "path": [
+        "ServerScriptService",
+        "ForestTasks"
+      ],
+      "referent": "RBX83357B8B3AE04945927EBF0AA7B34B82",
+      "class": "Script",
+      "properties": {
+        "Disabled": "true",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "81af40ccc73c7cc7c5c1bcdd1c12f09d7fcc14e2b47c112ee2e3f28d261f57e2"
+    },
+    {
+      "file": "game/ServerScriptService/0068_ProgressionPlaytest.server.luau",
+      "path": [
+        "ServerScriptService",
+        "ProgressionPlaytest"
+      ],
+      "referent": "RBX005045A0CD0B4431ADBE7A6CB615F6C6",
+      "class": "Script",
+      "properties": {
+        "Disabled": "true",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "3bbeee3b6e0f002714d664c3b87ef06e04841824e63dd377c546a2aa0e309185"
+    },
+    {
+      "file": "game/ServerScriptService/0069_TaskGames.luau",
+      "path": [
+        "ServerScriptService",
+        "ForestRescueService",
+        "TaskGames"
+      ],
+      "referent": "RBX9363924689C748F18EA155F346EF5118",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "d63f4f9dacfab47aa510aeb5bc2a255f4db1413eacdd650bb280b7373c071674"
+    },
+    {
+      "file": "game/ServerScriptService/0070_ForestRescueService.luau",
+      "path": [
+        "ServerScriptService",
+        "ForestRescueService"
+      ],
+      "referent": "RBX77748DDE3C2F4F21AB04AE400C1A8F7F",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "2c495d3809a321322626c29a4d72de12883fc843582c17999ce41326a344df0e"
+    },
+    {
+      "file": "game/ServerScriptService/0071_ForestRescueBootstrap.server.luau",
+      "path": [
+        "ServerScriptService",
+        "ForestRescueBootstrap"
+      ],
+      "referent": "RBX52279AF83FE1409380B85BACB1F8C8F2",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "8d7a9a8ddc7887f43e7add316782c16fb4071a67af4cce8b351707384efdaa12"
+    },
+    {
+      "file": "game/ServerScriptService/0072_FortuneLedger.luau",
+      "path": [
+        "ServerScriptService",
+        "FortuneLedger"
+      ],
+      "referent": "RBX8B20740117814A04BFE04D46FFCCA814",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "8cde138c031005c82292474405902060b39ed95bec7c86a352f51635542e38c3"
+    },
+    {
+      "file": "game/ServerScriptService/0073_MOINSService.luau",
+      "path": [
+        "ServerScriptService",
+        "MOINSService"
+      ],
+      "referent": "RBXF1BF508A61CE4060B2503205110BBECA",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "c120fbebce47769bfa7fb5212b8af2071ab30955939034c31a0e8983721fad98"
+    },
+    {
+      "file": "game/ServerScriptService/0074_FortuneRewards.luau",
+      "path": [
+        "ServerScriptService",
+        "FortuneRewards"
+      ],
+      "referent": "RBXB95C13795C884A51A9EB4B04DCEC6FB8",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "bfe3549f938d0fbaa6de7de27699e678d591fa4304a1d201112c7af4161f6018"
+    },
+    {
+      "file": "game/ServerScriptService/0075_FortuneService.luau",
+      "path": [
+        "ServerScriptService",
+        "FortuneService"
+      ],
+      "referent": "RBX57D29D8C6BA6477AA19CC232478EE3B0",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "85e1dc55fb0c014a3bdf242b2545097f05e045a7c5342a8670f4b03652910505"
+    },
+    {
+      "file": "game/ServerScriptService/0076_FortuneBootstrap.server.luau",
+      "path": [
+        "ServerScriptService",
+        "FortuneBootstrap"
+      ],
+      "referent": "RBXF7B75051D80C4AE7A3F75D0C5962F8D7",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "c543520b10547888be49ab8ba9c068b5c642e6ec740684eedb4ae87fcb3ff178"
+    },
+    {
+      "file": "game/ServerScriptService/0077_MoinsShopServer.server.luau",
+      "path": [
+        "ServerScriptService",
+        "MoinsShopServer"
+      ],
+      "referent": "RBX65948ADDB43240A28F90E259643A0213",
+      "class": "Script",
+      "properties": {
+        "Disabled": "true",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "b8bd20dfe9dec91cd5a69c636406040a9b3fc1a3822d45ad1febea5ee91ec254"
+    },
+    {
+      "file": "game/ServerScriptService/0078_MoinsLedger.luau",
+      "path": [
+        "ServerScriptService",
+        "MoinsLedger"
+      ],
+      "referent": "RBX9CEC73885AFD4552A706896C1986FBA8",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "0f2c670d1c0c583faa704d827f91865cabe1bd7e5f8a3c4bf4146953c438515d"
+    },
+    {
+      "file": "game/ServerScriptService/0079_CharacterHeight.server.luau",
+      "path": [
+        "ServerScriptService",
+        "CharacterHeight"
+      ],
+      "referent": "RBXC6874339C4E343168CA4B9FD8318FC00",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "aa7e0c2bf9511a2df2b0486d7e10d2d5a1eb1ebe0c573630d3d9ca3d09be0719"
+    },
+    {
+      "file": "game/ServerScriptService/0080_Wristbands.server.luau",
+      "path": [
+        "ServerScriptService",
+        "Wristbands"
+      ],
+      "referent": "RBXA33AF989E750481F88C5C7F1D1420498",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "b358a381d14acf3fbf74a3f085241ffaeb79c0b482a01d14d1d43d6d6f1fa64d"
+    },
+    {
+      "file": "game/ServerScriptService/0081_RescueStationAnimator.server.luau",
+      "path": [
+        "ServerScriptService",
+        "RescueStationAnimator"
+      ],
+      "referent": "RBX1B757864AC5343AD938F588A52933743",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "91ec08720670337eecb1f9aa5d85365b176cc09af22917c808647cab6cbab8a1"
+    },
+    {
+      "file": "game/ServerScriptService/0082_WellMechanism.server.luau",
+      "path": [
+        "ServerScriptService",
+        "WellMechanism"
+      ],
+      "referent": "RBX5D47F870D3B145D39816546CDA220D2B",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "5c1da021c2baf84b036b6b59104ad942b456132bea39a0aee46dc45ad5a4c493"
+    },
+    {
+      "file": "game/ServerScriptService/0083_CabinDoorService.server.luau",
+      "path": [
+        "ServerScriptService",
+        "CabinDoorService"
+      ],
+      "referent": "RBX8D27272D77B8441AB6EF82C63D13E7CF",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "d34fb3162b2fd20895e483f9d9c5f4f09012d371e754c596383f8ee6c7d70925"
+    },
+    {
+      "file": "game/ServerScriptService/0084_LootConfig.luau",
+      "path": [
+        "ServerScriptService",
+        "LootService",
+        "LootConfig"
+      ],
+      "referent": "RBX54928F8CB27F4765997058655F04B857",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "fae09d8c0b9feb26bdb048d9cc1e242c0e899d30fdf34bc3583ff3d1198ced42"
+    },
+    {
+      "file": "game/ServerScriptService/0085_LootService.server.luau",
+      "path": [
+        "ServerScriptService",
+        "LootService"
+      ],
+      "referent": "RBXD8E398E39FBC47579AE89786E793909C",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "ec85fd22476062f866be7f02add9970019b3fa742a5fd5556778dbeb28c0bdb9"
+    },
+    {
+      "file": "game/ServerScriptService/0086_VentService.luau",
+      "path": [
+        "ServerScriptService",
+        "VentService"
+      ],
+      "referent": "RBXEA85F10717D84F138E196AA17A4EF638",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "497f0ef83f453f12d3e1f8f60a5c17ece69d54b007f9dcc79f3c7cd5ab3befd0"
+    },
+    {
+      "file": "game/ServerScriptService/0087_VentBootstrap.server.luau",
+      "path": [
+        "ServerScriptService",
+        "VentBootstrap"
+      ],
+      "referent": "RBX9FAC8CB20AA6484287DEF9678724CECD",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "4ad2be673053ea04e864db387ead2b4317f8fe85cef5e247b442307c595628ee"
+    },
+    {
+      "file": "game/ServerScriptService/0088_FlashlightBattery.luau",
+      "path": [
+        "ServerScriptService",
+        "FlashlightBattery"
+      ],
+      "referent": "RBX7CC5EAB7960A40CEBF69472810CAE790",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "9075f2f5ec455b686add44292bad08d15c5846ac20787642dd11d775de83b642"
+    },
+    {
+      "file": "game/ServerScriptService/0089_BarrierContactServer.server.luau",
+      "path": [
+        "ServerScriptService",
+        "BarrierContactServer"
+      ],
+      "referent": "RBX4A3427EB2F094DCA96E7796C6575CF50",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "9e95c37376f23cef15effe0643811b9b58667c32705f76547c0f3898edb893eb"
+    },
+    {
+      "file": "game/ServerScriptService/0090_GraveyardService.server.luau",
+      "path": [
+        "ServerScriptService",
+        "GraveyardService"
+      ],
+      "referent": "RBX7FDEB79F53B24F8D9C7F0A9E32697415",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "889384fba701cf49deb3f071b79e5ff7470774a7b0eb57c0770bfb109dff37f4"
+    },
+    {
+      "file": "game/ServerScriptService/0091_GamePassService.luau",
+      "path": [
+        "ServerScriptService",
+        "GamePassService"
+      ],
+      "referent": "RBX2E2A80D922BC42408BEB5D62ED309F34",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "8a9286f8f2608a9e11c13de6023c853e1ca5c5f21e02e364fce28cda3f3c2b39"
+    },
+    {
+      "file": "game/ServerScriptService/0092_GamePassBootstrap.server.luau",
+      "path": [
+        "ServerScriptService",
+        "GamePassBootstrap"
+      ],
+      "referent": "RBX4EE8490B88694C52BD998ADEE9DE20A0",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "184cd6872271554df5f7275d0cfb9a3a97e84dfb17a04185d2579f8036e0c69b"
+    },
+    {
+      "file": "game/ServerScriptService/0093_KillerAbilities.server.luau",
+      "path": [
+        "ServerScriptService",
+        "KillerAbilities"
+      ],
+      "referent": "RBX0A5BE31A23EF4E1FAFE7E1524B6D9A5F",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "540f800b8ff34906f3673cb190e57040f16795f8f5a664a6ccc84ce689a1e57c"
+    },
+    {
+      "file": "game/ServerScriptService/0094_ForestProgressTransfer.luau",
+      "path": [
+        "ServerScriptService",
+        "ForestProgressTransfer"
+      ],
+      "referent": "RBX2FD9D76CEFD04F3E9ADF18F3FEE00392",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "1f5d0eda91948c4012f137f7a7684d85fb883b52c2bf6ebf0789cea89d41f4dd"
+    },
+    {
+      "file": "game/ServerScriptService/0095_CounselorLooks.server.luau",
+      "path": [
+        "ServerScriptService",
+        "CounselorLooks"
+      ],
+      "referent": "RBXCF2CE52166714B40B11B04FBEE9B908F",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "52f322fb748ac203b1ffa8201df26681ff4d119910206b0e680a9da4f922a665"
+    },
+    {
+      "file": "game/ServerScriptService/0096_RadioTowerService.luau",
+      "path": [
+        "ServerScriptService",
+        "RadioTowerService"
+      ],
+      "referent": "RBX1437EF300C964629ADF2FDDDB8D8F645",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "bc259d77cc1107fa44ded6eb0fb27a1ec9224812d75a5b59128a46a7d7d5cd91"
+    },
+    {
+      "file": "game/ServerScriptService/0097_RadioTowerBootstrap.server.luau",
+      "path": [
+        "ServerScriptService",
+        "RadioTowerBootstrap"
+      ],
+      "referent": "RBXA4889ABD79754221AC64FB55CC7DE66C",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "0d12845274ecd27042e4196a7a3b64d4f095ef3e60581974185498cafc3d299b"
+    },
+    {
+      "file": "game/ServerScriptService/0098_EscapeVanService.luau",
+      "path": [
+        "ServerScriptService",
+        "EscapeVanService"
+      ],
+      "referent": "RBX60A713D4D1C7470B91E7345AD926D1A6",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "73897c6164a74e86dacc055af61fdd5de0886da26648a3737ab591809ef9b410"
+    },
+    {
+      "file": "game/ServerScriptService/0099_EscapeVanBootstrap.server.luau",
+      "path": [
+        "ServerScriptService",
+        "EscapeVanBootstrap"
+      ],
+      "referent": "RBX294EB8F9DEC94B7FA0163A5DE2ABEECF",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "1f035c1e285c9580d01070f3023e46bdb9f42045eaebd1e1294ad4cf85160713"
+    },
+    {
+      "file": "game/ServerScriptService/0100_AntennaLight.server.luau",
+      "path": [
+        "ServerScriptService",
+        "AntennaLight"
+      ],
+      "referent": "RBX8D13DE5F6E4B45B4A4F7159BEA92E135",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "2d2b55e418c7cc4165ad8786e00c636b29dc361b54e01b2a79fd507b4b4aef99"
+    },
+    {
+      "file": "game/ServerScriptService/0101_Server.server.luau",
+      "path": [
+        "ServerScriptService",
+        "Server"
+      ],
+      "referent": "RBXEF13ADDD5D6E482CA262BE65B0658E56",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "9ba8acb76e80f7d3c792b569cf64d73a163856025b0ebbdccb56facdf845df92"
+    },
+    {
+      "file": "game/ServerStorage/0102_OriginalMaskService.luau",
+      "path": [
+        "ServerStorage",
+        "HarlequinBackups",
+        "OriginalMaskService"
+      ],
+      "referent": "RBX6EF2CD66ED0E4218ACC121EA3D295149",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "3ce15fd8a280f703da4004e1d1e9c39995852635297c8bd8e21b964fa58b2daf"
+    },
+    {
+      "file": "game/ServerStorage/0103_MaskService.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeWindowQueueUpdate",
+        "MaskService"
+      ],
+      "referent": "RBXAC92ED53A9E842F2A8CBFA3C3615A589",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "7ef1178c353fbd82532047d8328af83fe663d34f89c78ec848b583668f4bb551"
+    },
+    {
+      "file": "game/ServerStorage/0104_CreatureServer.server.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeWindowQueueUpdate",
+        "CreatureServer"
+      ],
+      "referent": "RBX734C5E174A5B4430806E11C934892F91",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "31a1d1c3f018c59c31832ee96aa14c9b5dba3da2c8968ecf9a1b260e3d1a0690"
+    },
+    {
+      "file": "game/ServerStorage/0105_HUDController.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeWindowQueueUpdate",
+        "HUDController"
+      ],
+      "referent": "RBX8DABBD49DD134B3DA82BC09E151D7F70",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "7b09d59fed2c926157e0ee4a89a79c2b86789ec1c3dc7d144ba99867ba2f3d2f"
+    },
+    {
+      "file": "game/ServerStorage/0106_MaskService.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeEmergencyCamp",
+        "MaskService"
+      ],
+      "referent": "RBX02045EC31CEC4663AB89205ACA5C24C7",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "03f13fe72e9ad4cfbeaa50371c172d2648331017a217db62942327ecef2c8eff"
+    },
+    {
+      "file": "game/ServerStorage/0107_CreatureServer.server.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeEmergencyCamp",
+        "CreatureServer"
+      ],
+      "referent": "RBX9B04D6C0F7B84D18BF20084397EE4475",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "fc03e98a343250a0961f067496292d348ca103d17f3a728f7055f13f66629289"
+    },
+    {
+      "file": "game/ServerStorage/0108_ReadyQueueServer.server.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeEmergencyCamp",
+        "ReadyQueueServer"
+      ],
+      "referent": "RBXF063C00981A24E5FB51DB6D741F3937C",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "e8537e9f14b713dd9258f257b3cdd5f3c511f24cbebaac363b6e89e1fb9cf831"
+    },
+    {
+      "file": "game/ServerStorage/0109_DayNightCycle.server.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeEmergencyCamp",
+        "DayNightCycle"
+      ],
+      "referent": "RBX9D4C100AD7434B4B9A67FC820BCBB904",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "d4142e27416a38797877b4341893963b8335305bd43a7a7482929f2dec59321e"
+    },
+    {
+      "file": "game/ServerStorage/0110_CampsiteBuilder.luau",
+      "path": [
+        "ServerStorage",
+        "CampsiteBuilder"
+      ],
+      "referent": "RBX08431A8655E34CD192A3E6548CD759FD",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "641d717e471bf1c38ca5163d77ce84f0bdc798e8fe736e12b488265716b6ef6b"
+    },
+    {
+      "file": "game/ServerStorage/0111_FlareClient.client.luau",
+      "path": [
+        "ServerStorage",
+        "MeetingFlareTemplate",
+        "FlareClient"
+      ],
+      "referent": "RBX7243B582B0F74C7F967F19A919E319E3",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "a0f0d6a4a2c4a3bad60ecf54a6bcf1e5ccbddfec503dffeed5022668a2d1bdbd"
+    },
+    {
+      "file": "game/ServerStorage/0112_SwingInteraction.server.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeEnclosedRusticCabin_1790019972",
+        "Lobby",
+        "TreeSwing",
+        "SwingInteraction"
+      ],
+      "referent": "RBX8AA008EDA98947BA97608E5B19AF1178",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "796c3098149ad317dc0793ca8166a9008278c47e54646f3d7d1390336af8b1b8"
+    },
+    {
+      "file": "game/ServerStorage/0113_ReadyQueueServer.server.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeXPAndDistress_1790020274",
+        "ReadyQueueServer"
+      ],
+      "referent": "RBXD804873D9D7247428E18DDDFFCA71488",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "bf4d70a3d2800f4b6ad40c8bcd5c1d8173852f737811e78e08869c1245f4bc02"
+    },
+    {
+      "file": "game/ServerStorage/0114_MaskService.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeXPAndDistress_1790020274",
+        "MaskService"
+      ],
+      "referent": "RBX4D2604EC5D2648C998898CDC540BB05C",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "f821db375f5b6c219e57e41f93876b3621967e415bf5faeff2408c244b341523"
+    },
+    {
+      "file": "game/ServerStorage/0115_ProgressionHUD.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeHorrorUI_1790211760",
+        "ProgressionHUD"
+      ],
+      "referent": "RBXA6EC87F2B0D04990A5E28230A35FD14E",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "ce3b3ce675e42a911d153b08f896fb824a1575d9eafe8044bd380bfab9b8b1d5"
+    },
+    {
+      "file": "game/ServerStorage/0116_RoundStatusHUD.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeHorrorUI_1790211760",
+        "RoundStatusHUD"
+      ],
+      "referent": "RBX8439FCB9BE404B02A19E9068C287FAE2",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "ced996f45cf7224a8301c7d40bebab3d9782216225d13bb415cd8c6c28adce87"
+    },
+    {
+      "file": "game/ServerStorage/0117_MeetingHUD.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeHorrorUI_1790211760",
+        "MeetingHUD"
+      ],
+      "referent": "RBXCE5911007ABE4599BC8395372E392F72",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "0e329047545b7479f5ecc4f505f320ec8bd45ef0ea1b4cc15cd97d54c4143a67"
+    },
+    {
+      "file": "game/ServerStorage/0118_HUDToggle.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeHorrorUI_1790211760",
+        "HUDToggle"
+      ],
+      "referent": "RBX0E82C82C0FA64EB590A131344914EA13",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "c3158522d983b629c7b92b62296ab56c2b922d96f36bc62cb7885e9bc3c920ab"
+    },
+    {
+      "file": "game/ServerStorage/0119_HUDController.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeHorrorUI_1790211760",
+        "DreadHUD",
+        "HUDController"
+      ],
+      "referent": "RBX167EAE3F8DEC4903A2888FEF35384C89",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "d73408403ce40e99b1bed5712f1086d21e2c6cce8037513292227ee7a74433a2"
+    },
+    {
+      "file": "game/ServerStorage/0120_FailingCabinLights.server.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeLobbyDread_1790212117",
+        "FailingCabinLights"
+      ],
+      "referent": "RBXDF5F7FC7097C40B991E722AD591530D1",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "ba3b771e4c5ed416d88afe7f040256d7e63dc54c4348f344aeec692776043a9f"
+    },
+    {
+      "file": "game/ServerStorage/0121_SummerCabinBuilder.luau",
+      "path": [
+        "ServerStorage",
+        "SummerCabinBuilder"
+      ],
+      "referent": "RBXC7C0BD081215465DBF19808B003E7241",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "7c9839977e204fc22aeeb610c482bae71adb90c9dce4cc426df8ff60ceb3c041"
+    },
+    {
+      "file": "game/ServerStorage/0122_ZoltarBuilder.luau",
+      "path": [
+        "ServerStorage",
+        "ZoltarBuilder"
+      ],
+      "referent": "RBXDB32C4B4B8DE49F69CEB7D176313EC66",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "0b7957d650328b50c48cd2013e6b1d11a7fd2059a501444da2aa9a262993a8d8"
+    },
+    {
+      "file": "game/ServerStorage/0123_ZoltarBuilderRefined.luau",
+      "path": [
+        "ServerStorage",
+        "ZoltarBuilderRefined"
+      ],
+      "referent": "RBX677DF44FBC874173BE1D5E85CED28B5F",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "516a5718feea0bf1bcd60883ee162922688b364749a7786c7b224d81de48d49e"
+    },
+    {
+      "file": "game/ServerStorage/0124_ZoltarController.luau",
+      "path": [
+        "ServerStorage",
+        "ZoltarBeforeShapeRefinement",
+        "ZoltarController"
+      ],
+      "referent": "RBX290A9DDEEB5B4478B56F302139542634",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "f2e1eba2713607bc9e1d91765da72820a125cbcfa307d2e8fa9101c8fbaa3165"
+    },
+    {
+      "file": "game/ServerStorage/0125_ZoltarRuntime.server.luau",
+      "path": [
+        "ServerStorage",
+        "ZoltarBeforeShapeRefinement",
+        "ZoltarRuntime"
+      ],
+      "referent": "RBX1D37E9764172453D892D84DAA5673906",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "768abe846daf82b7a2d43d375c6d8b2071056b8719f67966821464ec5d3b49a3"
+    },
+    {
+      "file": "game/ServerStorage/0126_ForestTasks.server.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeForestRescue_1790429931",
+        "ForestTasks"
+      ],
+      "referent": "RBXF9CAD7F507C14E44972F93CEC7FD585C",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "81af40ccc73c7cc7c5c1bcdd1c12f09d7fcc14e2b47c112ee2e3f28d261f57e2"
+    },
+    {
+      "file": "game/ServerStorage/0127_ReadyQueueServer.server.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeForestRescue_1790429931",
+        "ReadyQueueServer"
+      ],
+      "referent": "RBX24402C74432C47FD909F0250CB092E3F",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "945bc9e1f2b0c0fca659114e7b025e82bf1f4d9f205e1dbe4150586170f0ddee"
+    },
+    {
+      "file": "game/ServerStorage/0128_MaskService.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeForestRescue_1790429931",
+        "MaskService"
+      ],
+      "referent": "RBX30C6D8E78DA64D0589D791E5919E5827",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "32411ea0b58d0325bed4ae0e09e983a8d2f63c2a15bc0454bbcb4d2db649d37a"
+    },
+    {
+      "file": "game/ServerStorage/0129_DayNightCycle.server.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeForestRescue_1790429931",
+        "DayNightCycle"
+      ],
+      "referent": "RBXE91E9BE7DE29402B8025A6E9E4B2DE57",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "f4e49fc84bf27aa64395bcfaf2919242f328cd327e461f23c96ee3bfef8487a6"
+    },
+    {
+      "file": "game/ServerStorage/0130_ProgressionMath.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeForestRescue_1790429931",
+        "ProgressionMath"
+      ],
+      "referent": "RBX8A70792B1DB84D31AB8B9E97CC8FF46D",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "c1ee6e7d1d6b16b0d8e157c5cadcb485938ae066bc81962cb53fc44f54236ee7"
+    },
+    {
+      "file": "game/ServerStorage/0131_ProgressionHUD.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeForestRescue_1790429931",
+        "ProgressionHUD"
+      ],
+      "referent": "RBXCBE81FB5FC984ED4BA690F987E926863",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "9c40fbfff89627ca3b04ff1f07ace97f90a7e81da26fe67d68c95024338657a0"
+    },
+    {
+      "file": "game/ServerStorage/0132_RoundStatusHUD.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeForestRescue_1790429931",
+        "RoundStatusHUD"
+      ],
+      "referent": "RBX5B2F74EA4FD64969AB564AB2B7DECB89",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "33f0ceda69bb1c26b52a49f9f378a33eda5998f4e1491705561b96b6a5ff003f"
+    },
+    {
+      "file": "game/ServerStorage/0133_ForestCompass.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeCompassGuides_1790431463",
+        "ForestCompass"
+      ],
+      "referent": "RBXA176BDE84D6246BCA700B5BB57EF48AB",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "aa27cbbd609787829680abfb1bac300849c8b46854f13349e21a81c02ee15641"
+    },
+    {
+      "file": "game/ServerStorage/0134_ForestRescueHUD.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeCompassGuides_1790431463",
+        "ForestRescueHUD"
+      ],
+      "referent": "RBXA1CD4C8F22F44D3D86A0550E1151120E",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "4a233c941a84471d346b346e17709fcfe05c3bf160636155fc93ffa78cb04218"
+    },
+    {
+      "file": "game/ServerStorage/0135_ZoltarRuntime.server.luau",
+      "path": [
+        "ServerStorage",
+        "ZoltarBeforeFortunes_20260926_160829",
+        "ZoltarFortuneMachine",
+        "ZoltarRuntime"
+      ],
+      "referent": "RBXB52C0B4E28EB423BA727DB91A95796C0",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "768abe846daf82b7a2d43d375c6d8b2071056b8719f67966821464ec5d3b49a3"
+    },
+    {
+      "file": "game/ServerStorage/0136_ZoltarController.luau",
+      "path": [
+        "ServerStorage",
+        "ZoltarBeforeFortunes_20260926_160829",
+        "ZoltarFortuneMachine",
+        "ZoltarController"
+      ],
+      "referent": "RBXBED0A54BEC4E46D4A761997A982481F0",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "f2e1eba2713607bc9e1d91765da72820a125cbcfa307d2e8fa9101c8fbaa3165"
+    },
+    {
+      "file": "game/ServerStorage/0137_MaskService.luau",
+      "path": [
+        "ServerStorage",
+        "ZoltarBeforeFortunes_20260926_160829",
+        "MaskService"
+      ],
+      "referent": "RBX9A64CFF91AEA4681B1DBED3D7F4559CF",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "1d4426f52398b46e9b42f75820ed2ed7bbd7b29c0beee5f3d7fad76bde1ef841"
+    },
+    {
+      "file": "game/ServerStorage/0138_ZFTemporaryReview.server.luau",
+      "path": [
+        "ServerStorage",
+        "ZoltarStudioVerification_20260926",
+        "ZFTemporaryReview"
+      ],
+      "referent": "RBXB324DABC884147C7A92E4208C9FAB86D",
+      "class": "Script",
+      "properties": {
+        "Disabled": "true",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "e6ea2177a02d0ce2bcc5c45221b3e0e377467eaee92f69a6dd62da0b6a33adf5"
+    },
+    {
+      "file": "game/ServerStorage/0139_ZFTemporaryCamera.client.luau",
+      "path": [
+        "ServerStorage",
+        "ZoltarStudioVerification_20260926",
+        "ZFTemporaryCamera"
+      ],
+      "referent": "RBXC974A8A4D41B43C7A489210CC5D7A8FC",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "true",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "306c83522582af75dd9ba28077555feb4b41a90e8f340db0a2f6430be8709a69"
+    },
+    {
+      "file": "game/ServerStorage/0140_MoinsShopConfig.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeMoinsProducts_1790522341",
+        "MoinsShopConfig"
+      ],
+      "referent": "RBXC0F21E3AFC4D422C817DBDCE4250F341",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "a33dafa507d3d06b6f791af41fd06ddf3fa6633787c02c2b39f99e34a3504096"
+    },
+    {
+      "file": "game/ServerStorage/0141_ReadyQueueServer.server.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeForestSpawn_1790539429",
+        "ReadyQueueServer"
+      ],
+      "referent": "RBX41A5AA7B0B9C4A2EA39BB390FFE9E571",
+      "class": "Script",
+      "properties": {
+        "Disabled": "true",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "584c42f785a24ee402d41495d8f12b97ecc04fd46d72303031227a9714df6493"
+    },
+    {
+      "file": "game/ServerStorage/0142_HUDController.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeCampHUD_1790625299",
+        "HUDController"
+      ],
+      "referent": "RBX14D8286DF2714E0ABC761E916498A292",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "4868e462f887c767e70fa5e1f9d2bb3aecc2a69f0832716f91c730bb209dd380"
+    },
+    {
+      "file": "game/ServerStorage/0143_ProgressionHUD.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeCampHUD_1790625299",
+        "ProgressionHUD"
+      ],
+      "referent": "RBXA3CFA4D624304ED5AD64FAD8F0BCADE0",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "e58d7604a5db2ebfb0e82e90dfb1f66cd76bf3ada2f8c4348478714ca07f511e"
+    },
+    {
+      "file": "game/ServerStorage/0144_ForestRescueHUD.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeCampHUD_1790625299",
+        "ForestRescueHUD"
+      ],
+      "referent": "RBX0FA8CBCEF35D49F58D03D3666B010EFF",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "c491305b3a5954f44fcdce5dad44134ae78e0c70e6e72528976b33f82459d0bd"
+    },
+    {
+      "file": "game/ServerStorage/0145_ForestCompass.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeCampHUD_1790625299",
+        "ForestCompass"
+      ],
+      "referent": "RBXA6891887D1E14E919DD0BB6B20598DEB",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "c42a6d1983dd9f04632153dbd9a1c6e1d8dcabb84cd8f8bc83b400531c30d0f3"
+    },
+    {
+      "file": "game/ServerStorage/0146_ForestCompass.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeCampHUD_1790625299",
+        "ForestCompass"
+      ],
+      "referent": "RBXF40FDA6DF6034032BC5A35211FEE55C5",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "99e2375099ac089b8bfb9d7a8e551b7dde4cfd6576471ec74e56fa654387f1c8"
+    },
+    {
+      "file": "game/ServerStorage/0147_HUDToggle.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeCampHUD_1790625299",
+        "HUDToggle"
+      ],
+      "referent": "RBXFC6D7384E9D34597814F48314F898147",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "b3e35bef23d5e826bacd833dbfad9ec83705a73a884fe414a051cb23a914342c"
+    },
+    {
+      "file": "game/ServerStorage/0148_ForestRescueHUD.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeCampHUD_1790625299",
+        "ForestRescueHUD"
+      ],
+      "referent": "RBXF5EEA7649F2C4FC38233F13CAB317700",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "713a5b75b4a3b3c009f7f355b67bddbfe6e4d8ed6ec21b612afef5538165fe52"
+    },
+    {
+      "file": "game/ServerStorage/0149_RescueStationAnimator.server.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeCampHUD_1790625299",
+        "RescueStationAnimator"
+      ],
+      "referent": "RBX31F2BC6C67B84072AE8A04D92DE8C85B",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "3022dc0f17a4407f12b5f3e6218fba5cf06fbe619c49b6860918653714320374"
+    },
+    {
+      "file": "game/ServerStorage/0150_MoinsShopHUD.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeShopImageQuality_1790638119",
+        "MoinsShopHUD"
+      ],
+      "referent": "RBXD0A76919ECE34B8C8AC3E1A944997F66",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "f19f2ff7177f36815a142498ae3ac5e86a1de3b9fe60f76b3f33d89ef37f11cc"
+    },
+    {
+      "file": "game/ServerStorage/0151_MoinsShopConfig.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeShopImageQuality_1790638119",
+        "MoinsShopConfig"
+      ],
+      "referent": "RBX77D096321D954021ABD4F56258CE12C7",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "87515ae1aafb3335d2292d037cdea4a6c4baa4f7e07f337854a8bfedaebdbabf"
+    },
+    {
+      "file": "game/ServerStorage/0152_MoinsShopHUD.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeMoinsOrnateBackground_1790639519",
+        "MoinsShopHUD"
+      ],
+      "referent": "RBX6AF25CE132DB401788BC33E43101C5AF",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "041b216f3502bdbbce747d594232ab630627c1c47fc55f529281e31d8041cd42"
+    },
+    {
+      "file": "game/ServerStorage/0153_MoinsShopConfig.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeMoinsOrnateBackground_1790639519",
+        "MoinsShopConfig"
+      ],
+      "referent": "RBXA21DF6B11D97483593F4527A5622A829",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "97b53d36be1a9be16859ccdfc21c870409491a64059dfe323ae4cc6fa99e297e"
+    },
+    {
+      "file": "game/ServerStorage/0154_Script.server.luau",
+      "path": [
+        "ServerStorage",
+        "LootItems",
+        "Bandage",
+        "Script"
+      ],
+      "referent": "RBX99A84C15189741D5B728B8D49F9D4531",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "20194c6f11d5a81c6a90b83c5aec820af4a50be08575d72dfdd6db58d8d4dc57"
+    },
+    {
+      "file": "game/ServerStorage/0155_LocalScript.client.luau",
+      "path": [
+        "ServerStorage",
+        "LootItems",
+        "Bandage",
+        "LocalScript"
+      ],
+      "referent": "RBX49D6B03E21184F1F87348E28893EB4EA",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "e5ceaef55d9249ba89e789444feebcf7c3e7f0f8650e994873a7f09a763fc197"
+    },
+    {
+      "file": "game/ServerStorage/0156_README.server.luau",
+      "path": [
+        "ServerStorage",
+        "LootItems",
+        "Bandage",
+        "README"
+      ],
+      "referent": "RBX354BD61E19874FCD8DC32807E1150B88",
+      "class": "Script",
+      "properties": {
+        "Disabled": "true",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "e2f61890c493a006ada94851f16537a0073a6188e019e04c2e3b98284ce8a8d6"
+    },
+    {
+      "file": "game/ServerStorage/0157_MaskService.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeKillerVents_1790816965",
+        "MaskService"
+      ],
+      "referent": "RBX01D56D1CD2264D4C8E198DB92CC76A0E",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "929a8d81b6b80c29d746df626bbc6f668b40a768e32a9dbe970dea8b79c8a179"
+    },
+    {
+      "file": "game/ServerStorage/0158_CreatureServer.server.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeKillerVents_1790816965",
+        "CreatureServer"
+      ],
+      "referent": "RBX63147DFA798F4548A45CFB39644A824A",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "a923b1ae8b4ab49d76d13fd9299db553a34b9b97da00ced471c15568f67debaa"
+    },
+    {
+      "file": "game/ServerStorage/0159_MeetingService.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeKillerVents_1790816965",
+        "MeetingService"
+      ],
+      "referent": "RBX09AE6D365FD0461690376C5CC58C5BD0",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "0cddb90c0f074dce44cec7a49bd0d5e3125aff0872155230852ff7b5dc013c68"
+    },
+    {
+      "file": "game/ServerStorage/0160_VentService.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeVentFinish_1791044086",
+        "VentService"
+      ],
+      "referent": "RBX02D0A1A3E480448AB48EEE2DDEBE4935",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "77651f57f94fefec76db6d5cec7049175f68f84bcd6502b60dcc8edca76337f5"
+    },
+    {
+      "file": "game/ServerStorage/0161_VentTunnel.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeVentFinish_1791044086",
+        "VentTunnel"
+      ],
+      "referent": "RBX7761D02F14264AF9B50B0D206DE7B604",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "592259179a637c3dadc34763e7a60bfb45cf84c09b1b3ee22070949d466d0d41"
+    },
+    {
+      "file": "game/ServerStorage/0162_KillerVentClient.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeVentFinish_1791044086",
+        "KillerVentClient"
+      ],
+      "referent": "RBXE662785E9CEE405F8B6A6B81A0A29518",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "3af6f82425751ea5e255d43cade66c078f6158f9b0e8a179ee856ea209485a75"
+    },
+    {
+      "file": "game/ServerStorage/0163_CampHUDLayout.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeForestWalletVisibility_1791154164",
+        "CampHUDLayout"
+      ],
+      "referent": "RBX3D4E97D84E584C1C8DA2D37F58820B51",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "aa8338649291afc933ec2c67dfa8e7839868ece08232c7d9942261f56693628b"
+    },
+    {
+      "file": "game/ServerStorage/0164_DayNightCycle.server.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeContinuousDayNight_1791154432",
+        "DayNightCycle"
+      ],
+      "referent": "RBXD259B0AC07F74D0E92F0CEC0B24A6A7F",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "9d3d1f8f63d0bf384f239a2ade40545f21a5b5d050de437d421cfaf2f190c4cd"
+    },
+    {
+      "file": "game/ServerStorage/0165_RoundStatusHUD.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeContinuousDayNight_1791154432",
+        "RoundStatusHUD"
+      ],
+      "referent": "RBXE1A9C06081FB49468981C33E09091142",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "1b472374ae838c75360d780eb8229e99267a807cabbdf1e43f6eec7676f1f988"
+    },
+    {
+      "file": "game/ServerStorage/0166_CampHUDLayout.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeContinuousDayNight_1791154432",
+        "CampHUDLayout"
+      ],
+      "referent": "RBXB0A6A72BCFC94E86B7610E326B62F913",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "a4539024bae56af5d9f320f2a2b0c4d9cddb979965270935c0474a1d0598e42e"
+    },
+    {
+      "file": "game/ServerStorage/0167_MoinsShopHUD.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeForestShopRemoval_1791154807",
+        "MoinsShopHUD"
+      ],
+      "referent": "RBXE808424B30F94AF2BEBECFF345CD01A0",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "e205b4ab6ed926b0bdc4a9b97eb856d790e45f6c4d79b999e000bbdcddd7c226"
+    },
+    {
+      "file": "game/ServerStorage/0168_MoinsShopServer.server.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeForestShopRemoval_1791154807",
+        "MoinsShopServer"
+      ],
+      "referent": "RBX4DF7A06EECFC42BCAD4DD657A3BF2224",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "b8bd20dfe9dec91cd5a69c636406040a9b3fc1a3822d45ad1febea5ee91ec254"
+    },
+    {
+      "file": "game/ServerStorage/0169_CampHUDLayout.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeForestShopRemoval_1791154807",
+        "CampHUDLayout"
+      ],
+      "referent": "RBX5030816CF2EB49788B470FA47C93E83B",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "d6122c97e3956de148f69330f685419c7567129ebacd3081648652d3dd54f83b"
+    },
+    {
+      "file": "game/ServerStorage/0170_TaskGames.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeGraveyard_1791323778",
+        "ForestRescueService",
+        "TaskGames"
+      ],
+      "referent": "RBX826E9D3A63AC42ABB10439DCBEF24E0D",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "d63f4f9dacfab47aa510aeb5bc2a255f4db1413eacdd650bb280b7373c071674"
+    },
+    {
+      "file": "game/ServerStorage/0171_ForestRescueService.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeGraveyard_1791323778",
+        "ForestRescueService"
+      ],
+      "referent": "RBX5F9F4C62146E4EE283806120D7022C71",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "a49146f248093f81f27e08a3b3743f061cbb8f1e8e6da8f46304fa2b744219e7"
+    },
+    {
+      "file": "game/ServerStorage/0172_GamesA.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeGraveyard_1791323778",
+        "ForestRescueHUD",
+        "TaskWindow",
+        "GamesA"
+      ],
+      "referent": "RBX14F0FBE0A78E4676B6A07C48D58BCC20",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "804bcd9cdac0845f0c84f64c52293221e6258912bb6aefc6c1f1709bf393d0bd"
+    },
+    {
+      "file": "game/ServerStorage/0173_GamesB.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeGraveyard_1791323778",
+        "ForestRescueHUD",
+        "TaskWindow",
+        "GamesB"
+      ],
+      "referent": "RBX0A502922851441ECB1D1E042F8E165CD",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "41518215ff12c7fffe1fd5947294dc13992dc50ee59ae7438f73ad85f3f386cd"
+    },
+    {
+      "file": "game/ServerStorage/0174_TaskWindow.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeGraveyard_1791323778",
+        "ForestRescueHUD",
+        "TaskWindow"
+      ],
+      "referent": "RBX212EE0F23F454FCF812FBFDA9A02CC62",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "59d01331fb72e3d7c884e2754cdc614137ecd397a06014d4f93275b695e945c4"
+    },
+    {
+      "file": "game/ServerStorage/0175_ForestRescueHUD.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeGraveyard_1791323778",
+        "ForestRescueHUD"
+      ],
+      "referent": "RBX03F83B8D7C9244CCA6BB0902C645B0B5",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "true",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "ba58ab8654e8444ad4d288a964569959fa1680bac19e165a89e30ba39b954e41"
+    },
+    {
+      "file": "game/ServerStorage/0176_ForestCompass.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeGraveyard_1791323778",
+        "ForestCompass"
+      ],
+      "referent": "RBX31F93F76C7474E6A9E2123FAD56C30CE",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "true",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "92a8d02958a227f1c712fc172bf59497ac7ee0633ead74ace8bdb46d4abb21d3"
+    },
+    {
+      "file": "game/ServerStorage/0177_RescueStationAnimator.server.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeGraveyard_1791323778",
+        "RescueStationAnimator"
+      ],
+      "referent": "RBXDB6554DAD01C48C2A53E37E786E8617F",
+      "class": "Script",
+      "properties": {
+        "Disabled": "true",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "91ec08720670337eecb1f9aa5d85365b176cc09af22917c808647cab6cbab8a1"
+    },
+    {
+      "file": "game/ServerStorage/0178_GraveyardBuilder.luau",
+      "path": [
+        "ServerStorage",
+        "GraveyardBuilder"
+      ],
+      "referent": "RBX91E6B127C9094177B603D79590A123DA",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "759d38b9cc7d515f428a8f002e5e9bcd8ec51e8bc001e45cbb532599bae6d1e9"
+    },
+    {
+      "file": "game/ServerStorage/0179_CampInfillBuilder.luau",
+      "path": [
+        "ServerStorage",
+        "CampInfillBuilder"
+      ],
+      "referent": "RBX2BBD111A705D4F48BEE1185B2C98B045",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "92324ebf3b81baa53bb4eedce97ad0349918f56a9b1639772ea01041ec9dfabc"
+    },
+    {
+      "file": "game/ServerStorage/0180_Animate.client.luau",
+      "path": [
+        "ServerStorage",
+        "CounselorKit",
+        "BlockyCounselor",
+        "Animate"
+      ],
+      "referent": "RBX4052FA57768D45ABA484A6BDB23AF824",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "49eab7530cfc33b8af13b995ae1fa87f482a489b6d108ec2410d12dd19b720f0"
+    },
+    {
+      "file": "game/ServerStorage/0181_Animate.client.luau",
+      "path": [
+        "ServerStorage",
+        "CounselorKit",
+        "Template",
+        "Animate"
+      ],
+      "referent": "RBX33124524158B49849DB3030133D9DBCC",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "49eab7530cfc33b8af13b995ae1fa87f482a489b6d108ec2410d12dd19b720f0"
+    },
+    {
+      "file": "game/ServerStorage/0182_CounselorBuilder.luau",
+      "path": [
+        "ServerStorage",
+        "CounselorBuilder"
+      ],
+      "referent": "RBX664A3D5C4B4C4A8985983DAC85AED2A7",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "c1bee9192a0292bfcc2627cda2063a9b97590089c02740fa1505633865ea47b8"
+    },
+    {
+      "file": "game/ServerStorage/0183_ProgressionService.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeVIPLevelTransfer_1791414381",
+        "ProgressionService"
+      ],
+      "referent": "RBX82FFF82D5E1C46B09AF40ADC58B14122",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "e10e03781437a5cb57fa3b8390b3c4fed73c46c1e2b799d98a3f836b63225fa8"
+    },
+    {
+      "file": "game/ServerStorage/0184_ReadyQueueServer.server.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeVIPLevelTransfer_1791414381",
+        "ReadyQueueServer"
+      ],
+      "referent": "RBX76D3194D31BD423C837D0360002E7ED2",
+      "class": "Script",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "cb8dfcdb9444565fda5d21d2914b57c5918e7da58f954cd5f7f485774ad0599a"
+    },
+    {
+      "file": "game/ServerStorage/0185_ForestRescueHUD.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeTaskLists",
+        "ForestRescueHUD"
+      ],
+      "referent": "RBXEEC0E4CC42274142BF39FD6F7ED8B4C3",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "true",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "ba58ab8654e8444ad4d288a964569959fa1680bac19e165a89e30ba39b954e41"
+    },
+    {
+      "file": "game/ServerStorage/0186_RadioTowerBuilder.luau",
+      "path": [
+        "ServerStorage",
+        "RadioTowerBuilder"
+      ],
+      "referent": "RBXF99F2D7F6A8B49C79921843499DC5A4E",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "2d111a00c64d1fd257110ad380ce9d6fe0f299d9a943236ce0803be7fac5fb04"
+    },
+    {
+      "file": "game/ServerStorage/0187_ReadyQueueServer.server.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeRoundIntro",
+        "ReadyQueueServer"
+      ],
+      "referent": "RBXDC9370C0E6D347748B2E9EB66DBEB9DB",
+      "class": "Script",
+      "properties": {
+        "Disabled": "true",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "78ec1842e7c20180181c91f88e3df7fbf6149d71c94714bf6f2dff5f41ef810c"
+    },
+    {
+      "file": "game/ServerStorage/0188_CounselorPicker.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeRoundIntro",
+        "CounselorPicker"
+      ],
+      "referent": "RBX34628894F87D41CC823C0E361B552064",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "true",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "4facca192c569c57f2379e75be994e40fadbcc7b0f0bd3e591634ba80aa2df95"
+    },
+    {
+      "file": "game/ServerStorage/0189_Wristbands.server.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeRoundIntro",
+        "Wristbands"
+      ],
+      "referent": "RBX96593BF54F714BC2A6456C413A51413B",
+      "class": "Script",
+      "properties": {
+        "Disabled": "true",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "970763a53eb57d41598132ba073a7584bec65dcbc5599ec88cf15f56d67d14c4"
+    },
+    {
+      "file": "game/ServerStorage/0190_Animate.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeBulkyCounselor",
+        "StarterCharacter",
+        "Animate"
+      ],
+      "referent": "RBX1A00F967FCEF41529B8D6E3298A159C9",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "49eab7530cfc33b8af13b995ae1fa87f482a489b6d108ec2410d12dd19b720f0"
+    },
+    {
+      "file": "game/ServerStorage/0191_Animate.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeBulkyCounselor",
+        "Template",
+        "Animate"
+      ],
+      "referent": "RBXDAC22AAFFE4A4C3781E2B9D344E3AB46",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "49eab7530cfc33b8af13b995ae1fa87f482a489b6d108ec2410d12dd19b720f0"
+    },
+    {
+      "file": "game/ServerStorage/0192_CounselorBuilder.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeBulkyCounselor",
+        "CounselorBuilder"
+      ],
+      "referent": "RBX4F5EBBBC63FE49078C68A3BACA6B229C",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "ed61bcf40927df07aebcc7aed3705986362ec8e721d85f3c90c380ae94af8ff5"
+    },
+    {
+      "file": "game/ServerStorage/0193_FlashlightClient.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeBulkyCounselor",
+        "FlashlightClient"
+      ],
+      "referent": "RBXCBCD59FCD6604B88932CC6F04858DBD2",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "false",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "85af4a2142022cf9f430264cbb5e5e07f778b3e28dc5e73b6ee002c98e0dec2d"
+    },
+    {
+      "file": "game/ServerStorage/0194_CampfireRebuilder.luau",
+      "path": [
+        "ServerStorage",
+        "CampfireRebuilder"
+      ],
+      "referent": "RBX2DE377EB04984A91BB4066489A0F903F",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "4c65cb24748bce532f78316a679f7321c21a5966955f22dd7d989f88b6bbdc12"
+    },
+    {
+      "file": "game/ServerStorage/0195_LanternUpgrader.luau",
+      "path": [
+        "ServerStorage",
+        "LanternUpgrader"
+      ],
+      "referent": "RBX86708C41212548ECB62D7551A6FABECA",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "a63492d0af74e5fc620ca02b9beb5c26530a4130cdbc052d378b94d9e8e517e0"
+    },
+    {
+      "file": "game/ServerStorage/0196_CampfirePathBuilder.luau",
+      "path": [
+        "ServerStorage",
+        "CampfirePathBuilder"
+      ],
+      "referent": "RBXADFB8FD0C3324964B7ABBE95A6EE7029",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "c24f5c82044c573ab2811e0230c57a8164680eff09fbc4822add214deb16b3f3"
+    },
+    {
+      "file": "game/ServerStorage/0197_RadioTowerFrame.luau",
+      "path": [
+        "ServerStorage",
+        "RadioTowerFrame"
+      ],
+      "referent": "RBX32CCABE8DC1F4394909DC8CD81DDB528",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "0a26be4b94d7e3c72e8666f79229fbbc1bd253be0e5666d7df0d54dc3944ad0a"
+    },
+    {
+      "file": "game/ServerStorage/0198_CampBusSigns.luau",
+      "path": [
+        "ServerStorage",
+        "CampBusSigns"
+      ],
+      "referent": "RBXFE2280563CA34C5AA81109B6EFB4CB37",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "13da08a805128f94e801577f02150344c1df82558d74c4fc7c0fb3d5c62246ae"
+    },
+    {
+      "file": "game/ServerStorage/0199_FlashlightClient.client.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeFirstPersonHands",
+        "FlashlightClient"
+      ],
+      "referent": "RBXE3257EBA4DBD446E94ECBEF9700E7A6C",
+      "class": "LocalScript",
+      "properties": {
+        "Disabled": "true",
+        "LinkedSource": "",
+        "RunContext": "0"
+      },
+      "sha256": "a0dc9a9297670aebf9156424100e92a4cf66c7cdc0800e4786f27f0681b9b984"
+    },
+    {
+      "file": "game/ServerStorage/0200_ViewHands_RealisticFist.luau",
+      "path": [
+        "ServerStorage",
+        "BeforeFirstPersonHands",
+        "ViewHands_RealisticFist"
+      ],
+      "referent": "RBXAC90004DE0364EE5A5E75CA648BBC815",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "57c34d9443e72bacfafcdd79fe45cd6c16f69ac09f8efaec40a7dc5dceeb1eeb"
+    },
+    {
+      "file": "game/ServerStorage/0201_ViewHandsPreview.luau",
+      "path": [
+        "ServerStorage",
+        "ViewHandsPreview"
+      ],
+      "referent": "RBXF3A13BEF613D4B46841F05E134BF1291",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "0e989f7306820249a8f573f86ed3f882c12c97fb7637a1a02bbe6dd8d166670d"
+    },
+    {
+      "file": "game/ServerStorage/0202_LanternPostBuilder.luau",
+      "path": [
+        "ServerStorage",
+        "LanternPostBuilder"
+      ],
+      "referent": "RBX4986EB5B13F448D9BA50E9CBE4775EF3",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "e575bad997aa128c9c2e84e15119ef6ad3dabdf0fecb3c19bd3b887e3b9d8201"
+    },
+    {
+      "file": "game/ServerStorage/0203_ArrowSignBuilder.luau",
+      "path": [
+        "ServerStorage",
+        "ArrowSignBuilder"
+      ],
+      "referent": "RBXB7F8F9CA76C7401594E7F482A84C96EC",
+      "class": "ModuleScript",
+      "properties": {
+        "LinkedSource": ""
+      },
+      "sha256": "1436602392508e482c2c59ca47e2fa634ecbe1edc0290affa347b19f7194a26d"
+    }
+  ]
+}

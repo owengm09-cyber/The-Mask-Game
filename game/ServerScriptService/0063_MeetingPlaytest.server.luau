@@ -1,0 +1,68 @@
+if not game:GetService("RunService"):IsStudio() then return end
+local Players=game:GetService("Players")
+local L=game:GetService("Lighting")
+local config=workspace:WaitForChild("MaskSystem")
+local camp=workspace:WaitForChild("EmergencyCampsite")
+local M=require(game.ServerScriptService.MeetingService)
+local Mask=require(game.ServerScriptService.MaskService)
+local reports={}
+local function check(value,msg) assert(value,msg) table.insert(reports,msg) print("MEETING PASS: "..msg) end
+local function waitFor(fn,seconds)
+ local deadline=os.clock()+seconds
+ repeat local result=fn() if result then return result end task.wait(.1) until os.clock()>deadline
+end
+task.wait(8)
+local p=Players:GetPlayers()[1]
+local ok,err=xpcall(function()
+ local char=waitFor(function()local c=p.Character local h=c and c:FindFirstChildOfClass("Humanoid") return h and h.Health>0 and c:FindFirstChild("HumanoidRootPart") and c end,15)
+ assert(char,"Live character required")
+ local h=char:FindFirstChildOfClass("Humanoid") local root=char.HumanoidRootPart
+ config:SetAttribute("CreatureEnabled",false)
+ config:SetAttribute("MatchActive",true) p:SetAttribute("InRound",false)
+ check(M.Pickup(p)==false,"Lobby players cannot take the meeting flare")
+ p:SetAttribute("InRound",true)
+ char:PivotTo(CFrame.new(camp.FlareSpawn.Position+Vector3.new(0,4,-25)))
+ check(M.Pickup(p)==false,"Distant pickup requests are rejected")
+ char:PivotTo(CFrame.new(camp.FlareSpawn.Position+Vector3.new(0,1,-4))) task.wait(.3)
+ check(M.Pickup(p)==true,"A nearby round player can pick up the flare")
+ check(M.Pickup(p)==false,"The flare cannot be duplicated")
+ local tool=char:FindFirstChild("Emergency Flare") check(tool~=nil,"The signal pistol equips in the player's hand")
+ h:UnequipTools() check(M.Fire(p)==false,"An unequipped flare cannot call a meeting") h:EquipTool(tool) task.wait(.5)
+ check(M.GetHolder()==p and tool.Parent==char,"Equipping and unequipping preserve the owned flare")
+ local original=char:GetPivot() local speed=h.WalkSpeed
+ config:SetAttribute("TestFireFlare",1)
+ check(waitFor(function()return config:GetAttribute("MeetingActive")==true end,18),"Client activation fires the flare and starts a meeting")
+ check(h.WalkSpeed==0 and char:FindFirstChild("FlareCinematicProtection")~=nil,"Everyone is frozen and protected during the flare cinematic")
+ check(waitFor(function()return config:GetAttribute("MeetingEndsAt")~=nil end,9),"The flare cinematic plays, then the meeting begins")
+ check(M.GetHolder()==nil and not char:FindFirstChild("Emergency Flare"),"Firing removes the held flare")
+ check(camp:FindFirstChild("FlareGunDisplay") and (camp.FlareGunDisplay:GetPivot().Position-camp.FlareSpawn.Position).Magnitude<.01,"Pistol returns to its exact pickup spot")
+ local seconds=M.ReadyAt()-workspace:GetServerTimeNow()
+ check(seconds>50 and seconds<=60,"Firing sets the 60-second cooldown")
+ check(M.Fire(p)==false and M.Pickup(p)==false,"Repeated fire and cooldown pickup are blocked")
+ task.wait(1)
+ check((root.Position-camp.CampCenter.Position).Magnitude<17 and h.WalkSpeed==0,"Meeting brings the player to the fire and freezes movement")
+ check(h.SeatPart and h.SeatPart:IsDescendantOf(camp.MeetingSeats),"Players sit on the campsite logs")
+ local channel=game:GetService("TextChatService").TextChannels:FindFirstChild("EmergencyMeeting")
+ local function inChannel() if not channel then return nil end for _,t in ipairs(channel:GetChildren()) do if t:IsA("TextSource") and t.UserId==p.UserId then return t end end end
+ check(waitFor(inChannel,6)~=nil,"Seated players join the meeting chat channel")
+ local remaining=L:GetAttribute("PhaseRemaining") local clock=L.ClockTime local phase=L:GetAttribute("Phase")
+ task.wait(2)
+ check(math.abs(L:GetAttribute("PhaseRemaining")-remaining)<.01 and math.abs(L.ClockTime-clock)<.001 and L:GetAttribute("Phase")==phase,"Meeting freezes the phase timer and lighting transition")
+ check(Mask.Attack(p)==false,"Killer attacks are blocked during the meeting")
+ check(waitFor(function()return config:GetAttribute("MeetingActive")==false end,50),"The 45-second meeting ends automatically")
+ task.wait(.5)
+ check(h.WalkSpeed==speed and not char:FindFirstChild("MeetingProtection"),"Meeting cleanup restores movement and removes temporary protection")
+ check(inChannel()==nil,"The meeting chat channel is cleared when the meeting ends")
+ check((root.Position-original.Position).Magnitude<5,"Players return to their pre-meeting location")
+ local after=L:GetAttribute("PhaseRemaining") task.wait(1)
+ check(L:GetAttribute("PhaseRemaining")<after-.7,"The day/night countdown resumes")
+ check(M.Pickup(p)==false,"The flare stays unavailable until one minute has elapsed")
+ task.wait(math.max(0,M.ReadyAt()-workspace:GetServerTimeNow())+.3)
+ char:PivotTo(CFrame.new(camp.FlareSpawn.Position+Vector3.new(0,1,-4))) task.wait(.2)
+ check(M.Pickup(p)==true,"The flare is reusable after 60 seconds")
+ h.Health=0 task.wait(.4)
+ check(M.GetHolder()==nil and camp:FindFirstChild("FlareGunDisplay")~=nil,"A carrier's death returns the unused flare safely")
+end,debug.traceback)
+M.EndMeeting() config:SetAttribute("TestFireFlare",nil) config:SetAttribute("CreatureEnabled",true) config:SetAttribute("MatchActive",false)
+local result=Instance.new("StringValue") result.Name="MeetingTestResults" result.Value=(ok and "PASS" or "FAIL").."\n"..table.concat(reports,"\n")..(err and "\n"..err or "") result.Parent=game.ServerStorage
+if ok then print("MEETING TESTS COMPLETE: "..#reports.." checks passed.") else warn("MEETING TEST FAILURE: "..tostring(err)) end

@@ -1,0 +1,18 @@
+# Focused Claude cloud tasks
+
+Run these sequentially on the imported Studio-source branch. Use the previous reviewed result as the next task's starting point. The owner has cloud-session promotional credits; this repository cannot change billing eligibility or pay for local sessions.
+
+## 1. Match reliability and intended player count
+Read CLAUDE.md and studio/scripts.json. Inspect the active ReadyQueueCore, ReadyQueueServer, MaskService, DayNightCycle, ForestRescueService and their callers. THE MASK should support one killer and up to nine survivors. Trace actual queue capacities, role transitions and match start/end conditions; inspect snapshot configuration if necessary using a small XML query. Produce a short evidence-based state diagram. Fix up to three verified high-impact lifecycle bugs, keeping changes focused. Check duplicate starts, disconnects during countdown, killer departure/death, survivors leaving, late joins, reset/respawn and delayed callbacks from an old round. Do not impose a new minimum-player rule without explaining the existing behavior and the design decision. Add meaningful isolated tests where feasible, run repository validation, and clearly list the multi-client Studio cases still required. Commit on a new branch and provide a reviewable diff. Do not publish or merge.
+
+## 2. Fair combat and exploit resistance
+Trace active killer attacks, abilities, vents, safe zones and survivor actions. For every remote or prompt, verify server-side authorization, current round, alive state, distance/line of sight, cooldown and malformed-input handling. Fix only demonstrated weaknesses, preserving existing intent and feel. Look for remote spam, spoofed target/position, impossible range, cooldown bypass and rewards outside an active round. State the legitimate interactions that could regress and give reproducible two-client test steps. Avoid inventing balance numbers. Run source validation and report limits honestly.
+
+## 3. Smooth gameplay and controls
+Inspect active client controllers and server loops, prioritizing camera, flashlight, hands, HUD, interactions and killer feedback. Identify concrete repeated work, per-frame allocations, unbounded loops, excess remote traffic or connections surviving respawn. Improve the highest-impact findings with small edits. Preserve visual direction and provide measurements obtainable in Studio MicroProfiler, memory/network stats and representative mobile hardware. Include keyboard, touch and controller acceptance cases where supported. Never claim FPS improvements without measurement.
+
+## 4. Fun and fair match tuning
+Map survivor objectives and killer counterplay from the current code. Propose a small experiment with measurable success criteria: completion/escape and role win rates, match length distribution, early elimination, downtime, quit rate and skill/party-size segments. Identify spawn traps, unavoidable attacks, excessive camping, task bottlenecks and uninteractive waiting with evidence. Implement only a small reversible tuning change backed by existing data, or prepare instrumentation and a playtest plan when data is missing. Keep purchased advantages out of competitive strength. Do not promise that a game is balanced before ten-player testing.
+
+## 5. Final regression pass
+Review changes from the preceding tasks as one release candidate. Check complete round start/play/end/requeue, all supported player counts, disconnect/rejoin, task dependencies, bus escape, meeting interruptions, killer/survivor transitions, data save failure and UI state after respawn. Run available checks, build a separate test place, provide a concise Studio test checklist and identify blockers. Do not claim Studio tests were run in cloud. Do not auto-publish.

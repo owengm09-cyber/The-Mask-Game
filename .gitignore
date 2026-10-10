@@ -6,3 +6,8 @@
 /*.rbxl.lock
 
 sourcemap.json
+
+# Local generated review places and Python caches
+/build/
+__pycache__/
+*.pyc

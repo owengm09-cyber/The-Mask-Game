@@ -1,0 +1,1 @@
+require(script.Parent.ZoltarController).Start(script.Parent)
