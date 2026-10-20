@@ -8,7 +8,7 @@ Evidence is from the exported sources (`game/ServerScriptService/…`) and a few
 Lobby ──(players arrive: lobbyArrivals)──► planLaunch ──► Picking (15 s, "Your Camper")
   ▲                                                          │ begin(): InRound, Role=Survivor, spawn pads, 8 s intro
   │                                                          ▼
-  │                                                       Playing  (day/night clock restarts at 08:00 on RoundId change)
+  │                                                       Playing  (day/night clock restarts at 14:00, MaskSystem.StartHour, on RoundId change; the original start was 08:00)
   │   tasks online only by DAY, offline by night / meeting / after the mask drops until dawn
   │   all 19 tasks done (RescueWon) ─► bus arrives, waits 300 s (moves once at 180 s) ─► leaves
   │   ends when: bus has left (escaped>0 → Innocents, else Monster)

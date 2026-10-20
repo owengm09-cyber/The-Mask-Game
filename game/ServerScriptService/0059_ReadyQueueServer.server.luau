@@ -205,7 +205,8 @@ local function begin(batch)
   end
   Progression.Begin(batch)
   Rescue.Begin()
-  Mask.Spawn()
+  -- no Mask.Spawn() here: the clock is reset to the round's start hour a moment later, and a stale "Night" left over from
+  -- the lobby clock would drop the mask at second zero. MaskService spawns it when this round's clock reaches night.
  end)
  if not ok then
   warn("Round start failed: "..tostring(err))

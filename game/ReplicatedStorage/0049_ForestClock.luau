@@ -1,4 +1,11 @@
-local C={CycleSeconds=24*60,StartHour=8}
+-- StartHour is where the clock begins each round. Night starts at 19:00 and one game hour lasts 60 s, so 14 puts the
+-- first night (and the first mask) 5 minutes in; the original 8 put it 11 minutes in. Override per server with the
+-- MaskSystem attribute "StartHour" (any hour from 0 up to, but not including, 24).
+local C={CycleSeconds=24*60,StartHour=14}
+function C.ResolveStartHour(value)
+ if type(value)=="number" and value==value and value>=0 and value<24 then return value end
+ return C.StartHour
+end
 function C.Advance(hour,dt,paused) return (hour+(paused and 0 or dt*24/C.CycleSeconds))%24 end
 function C.Phase(hour) return hour>=6 and hour<19 and "Day" or "Night" end
 function C.Remaining(hour) return (C.Phase(hour)=="Day" and 19-hour or (6-hour)%24)*C.CycleSeconds/24 end

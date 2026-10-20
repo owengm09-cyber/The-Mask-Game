@@ -100,7 +100,7 @@ end
 PRESETS.Dawn=twilight(PRESETS.Day)
 PRESETS.Dusk=twilight(PRESETS.Night)
 local keys={{0,"Night"},{5.5,"Night"},{6,"Dawn"},{7,"Day"},{17.5,"Day"},{19,"Dusk"},{20,"Night"},{24,"Night"}}
-local hour=Clock.StartHour local phase=nil local accumulator=0
+local hour=Clock.ResolveStartHour(config:GetAttribute("StartHour")) local phase=nil local accumulator=0
 local function render()
  local lo,hi=keys[1],keys[2]
  for i=1,#keys-1 do if hour>=keys[i][1] and hour<keys[i+1][1] then lo=keys[i] hi=keys[i+1] break end end
@@ -123,7 +123,7 @@ local function render()
  local nextPhase=Clock.Phase(hour)
  if phase~=nextPhase then phase=nextPhase Lighting:SetAttribute("Phase",phase) PhaseChanged:FireAllClients(phase,remaining) end
 end
-config:GetAttributeChangedSignal("RoundId"):Connect(function() hour=Clock.StartHour render() end)
+config:GetAttributeChangedSignal("RoundId"):Connect(function() hour=Clock.ResolveStartHour(config:GetAttribute("StartHour")) render() end)
 render()
 RunService.Heartbeat:Connect(function(dt)
  hour=Clock.Advance(hour,dt,config:GetAttribute("MeetingActive")==true)

@@ -12,7 +12,7 @@ Decision: which of the nine available tasks to start with, whom to work next to 
 ## 2. Time structure (from the code)
 
 - **First 30 seconds.** Arrival wait (until the group is loaded, at most 12 s), then a forced 15 s camper picker (I found no "ready" button; its help text says "the round starts when the red line runs out"), then an 8 s non-skippable intro that ends in first person. So **23 to 35+ seconds with no control**, before the first real decision. After that the HUD gives a clear first goal: "RESTORE POWER AND FIX THE BUS", the Escape Plan panel, and "NEXT: FIND GENERATOR FUEL / CAMP". I found no general controls tutorial; only per-mini-game hints and the `[R]` flashlight hint.
-- **First session.** Day lasts 13 minutes of real time and night 11; the first night starts 11 minutes in. Tasks run by day only. The killer role does not exist until the mask spawns at night.
+- **First session.** Day lasts 13 minutes of real time and night 11; the first night used to start 11 minutes in (it now starts 5 minutes in, see `docs/FIRST_NIGHT.md`). Tasks run by day only. The killer role does not exist until the mask spawns at night.
 - **Later sessions.** What changes: group, mask location, loot, mini-game parameters, who wins the mask race, pad assignment. What does not: the map, the same 19 tasks and dependencies, the clock. Practice pays off in mini-game speed, route knowledge, hiding and chasing. Cosmetic picks and XP levels persist; no gameplay unlocks were found. Restarting after a loss is **not** possible until the whole trial ends (see below).
 
 ## 3. Findings
@@ -26,7 +26,7 @@ Decision: which of the nine available tasks to start with, whom to work next to 
 6. The picker and wristband code still assume **11** players, not 10.
 
 **B. Design hypotheses to test**
-- A long stretch before any threat exists (11 minutes, no killer) makes the early game low-tension.
+- A long stretch before any threat exists (11 minutes, no killer, before the first-night change) makes the early game low-tension.
 - Tasks are offline at night, so survivors have little to decide then except hiding.
 - A miss with the strike gives the killer little feedback; survivors cannot tell why a strike failed or succeeded under latency.
 - Task mini-games wait for a server round trip on every input, which may feel laggy on slow connections.
@@ -65,7 +65,7 @@ Display-only. **Off switch:** set `Workspace.MaskSystem` attribute `OutBriefing`
 
 - **Spectating (E2):** (a) none (today), (b) spectate living survivors only, (c) the same with a 20-30 s delay to blunt ghosting. I recommend testing (b) only after E1, because it can leak positions through outside voice.
 - **Leave early (E3):** (a) wait (today), (b) return to lobby at once but keep partial XP (needs a rule for the XP now zeroed for leavers), (c) a short side activity for the eliminated. Each changes rewards or role identity: your decision.
-- **Pre-night pacing:** a start hour is a constant in `ForestClock`; a one-line change would bring the first night forward, but it also shortens the first day for tasks. Measure first with `allTasksAt` vs `firstNightAt`.
+- **Pre-night pacing:** done at your request, see `docs/FIRST_NIGHT.md`.
 
 ## 8. Evidence for keep, revise or revert
 

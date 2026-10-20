@@ -7,9 +7,43 @@ end
 local function utf8len(s) return utf8.len(s) end
 
 test("existing clock behaviour is unchanged", function()
-	assert(C.StartHour == 8 and C.CycleSeconds == 1440)
+	assert(C.CycleSeconds == 1440)
 	assert(C.Phase(8) == "Day" and C.Phase(19) == "Night" and C.Phase(5.9) == "Night")
 	assert(C.Format(13.5) == "1:30 PM")
+end)
+
+-- seconds of play from `hour` until the clock first reports Night, stepping at 30 Hz like Heartbeat
+local function secondsToNight(hour, paused)
+	local t, dt = 0, 1 / 30
+	while C.Phase(hour) == "Day" and t < 3600 do
+		hour = C.Advance(hour, dt, paused and t < 100)
+		t += dt
+	end
+	return t
+end
+
+test("the first night comes five minutes into a round by default", function()
+	assert(C.StartHour == 14 and C.Phase(C.StartHour) == "Day")
+	assert(math.abs(C.Remaining(C.StartHour) - 300) < 1e-6)
+	local t = secondsToNight(C.StartHour)
+	assert(math.abs(t - 300) < 0.1, "dusk after " .. t .. " s")
+end)
+
+test("the original 08:00 start still gives 11 minutes", function()
+	assert(math.abs(secondsToNight(8) - 660) < 0.1)
+end)
+
+test("a meeting pauses the clock, so dusk is pushed back by its length", function()
+	local t = secondsToNight(C.StartHour, true)
+	assert(math.abs(t - 400) < 0.2, "dusk after " .. t .. " s with a 100 s pause")
+end)
+
+test("the MaskSystem StartHour override is validated", function()
+	assert(C.ResolveStartHour(nil) == 14)
+	assert(C.ResolveStartHour(8) == 8 and C.ResolveStartHour(0) == 0 and C.ResolveStartHour(23.5) == 23.5)
+	for _, bad in { -1, 24, 99, 0 / 0, math.huge, "8", true, {} } do
+		assert(C.ResolveStartHour(bad) == 14, "accepted " .. tostring(bad))
+	end
 end)
 
 test("an eliminated player sees who is left and how the escape plan stands", function()

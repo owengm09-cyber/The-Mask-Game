@@ -21,7 +21,7 @@ Basis: the exported scripts, a few small queries of `studio/hierarchy.json`, and
 - **Draw:** none exists. A round that fails to start ends with no winner and no XP.
 - **Players:** minimum none (one player starts a round); maximum intended 10, now enforced at launch (see `docs/MATCH_LIFECYCLE.md`). The snapshot says `MaxPlayers` 60.
 - **Killer selection:** nobody is assigned. A survivor takes the mask (hold 0.6 s) from a random spot outside any safe zone, inside a square of ±260 studs around the origin; it only appears at night, 5 s after the previous holder is released. There is no repeat-selection handling; a player may win the race every round. You decided the location stays random, which also lowers the chance of two players arriving together.
-- **Clock:** 24-minute cycle, 60 s per game hour; a round starts at 08:00, **so the first night starts 11 minutes in**; day 13 min, night 11 min. Meetings pause the clock, tasks and the bus timer.
+- **Clock:** 24-minute cycle, 60 s per game hour; a round **now starts at 14:00, so the first night (and the first mask) comes 5 minutes in**; it was 08:00 and 11 minutes before the change in `docs/FIRST_NIGHT.md`. Day 13 min, night 11 min. Meetings pause the clock, tasks and the bus timer.
 - **Tasks:** 19 (Power list 9, Bus list 10), at most 2 workers each, online **by day only** (also offline in meetings and after the mask appears until dawn). Nine tasks have no prerequisite at the start; the longest prerequisite chain is 6 (1 → 2 → 5 → 11 → 13 → 15). 27 mini-game rounds in total; the server judges every result and enforces a minimum time.
 - **Bus:** starts when all 19 are done; waits 300 s, moves once at 180 s.
 - **Killer by night:** Mask Strike, range 7 (cone about ±75° of facing), cooldown 1.2 s, instant kill, line of sight required; creature run speed 22 (survivors walk at 16); frozen for 1.8 s after a kill; vents (30 s cooldown, 2 s travel, range 12). **Killer by day** (looks like any camper): sabotage (cooldown 75 s, jams 20 s, range 9, undoes a finished task; 13 of 19 tasks are sabotageable) and pushing a survivor off the two kill spots, the well and the radio tower (cooldown 45 s, range 6.5), and tearing down the tower ladder.
@@ -32,13 +32,13 @@ Basis: the exported scripts, a few small queries of `studio/hierarchy.json`, and
 
 ## 3. 1v9 hypotheses (mechanism, how to test)
 
-1. **A killer may not exist for the first 11 minutes.** The mask only spawns at night. Nine survivors can start nine tasks at once. *If they finish all 19 before the first night, the bus runs mostly unopposed.* Test: `allTasksAt` against `firstNightAt` and `firstMaskWornAt`.
+1. **A killer may not exist for the first stretch of the round** (5 minutes by default now, 11 before the change). The mask only spawns at night. Nine survivors can start nine tasks at once. *If they finish all 19 before the first night, the bus runs mostly unopposed.* Test: `allTasksAt` against `firstNightAt` and `firstMaskWornAt`.
 2. **Night is lopsided in the killer's favour on paper:** tasks are offline, the killer is 37% faster with an instant 7-stud kill, there is no safe zone, and survivors' only counterplay is distance, the flare, light discipline and (if drawn) the hatchet. Test: `firstDeathAt` relative to `firstNightAt`, deaths per night minute, survivors alive at dawn.
 3. **The flare can chain control of the killer.** A meeting freezes the killer for about 50 s and the next flare is ready 10 s later; survivors must reach the camp stump each time, and the killer can wait near their return positions. Test: `meetings` per round, and the share of round time spent in meetings (about 50 s each).
 4. **Sabotage against parallel work:** one sabotage per 75 s against up to 18 simultaneous workers. Test: `halfTasksAt` and `allTasksAt` in rounds where the killer holds the mask by day.
 5. **Snowball:** dead players leave the round permanently and the task total does not shrink, so a survivor who is last faces all 19 tasks. I found no revive or rescue mechanic. Test: win rate by deaths before the first night.
 6. **No timer:** nobody can win by waiting, but a mask holder who stands still is never replaced (they are not released until they die or leave), which removes the killer role for everyone. Test: playtest with an idle holder; consider an idle release later.
-7. **Spawn traps:** the 12 pads are safe in practice (first possible threat is 11 minutes later and everyone has 11 s of protection). Pad assignment is now by arrival order instead of always by user id.
+7. **Spawn traps:** the 12 pads are safe in practice (the first possible threat is 5 minutes later, 11 under the original start, and everyone has 11 s of protection). Pad assignment is now by arrival order instead of always by user id.
 8. **Coordination:** the only in-game talking is the meeting chat. Parties on outside voice can coordinate; solos cannot. Test: split results by party size.
 9. **Mobile and controller:** prompts have gamepad keys; the strike is a tool activation (click, tap, trigger); the flashlight reload is R or D-pad up. Test on a phone and a controller: pick up the mask, strike, sabotage, push, use the flare, reload.
 
@@ -63,7 +63,7 @@ Gaps, in order of importance:
 
 | Mechanism | Current value (where) | Purpose | Suspected issue | Experiment |
 |---|---|---|---|---|
-| First night | 08:00 start, 11 min (`ForestClock.StartHour`, code constant) | Day tasks, night hunt | Unopposed task phase | Measure first; then try an earlier start, or an earlier mask spawn |
+| First night | 14:00 start, 5 min (`ForestClock.StartHour`; override with `MaskSystem.StartHour`; was 08:00 / 11 min) | Day tasks, night hunt | Too little daylight for the first tasks, or still unopposed | Compare `allTasksAt` with `firstNightAt` across 8, 11 and 14 |
 | Strike range / cooldown | 7 / 1.2 s (`MaskSystem.AttackRange`, `.AttackCooldown`) | Kill reach | Reach perks stack on it | Vary only with data |
 | Creature speed | 22 vs 16 (`CreatureRunSpeed`) | Chase pressure | No escape without obstacles | Chase length telemetry (not yet captured) |
 | Vent | 30 s, 2 s, 12 studs (hard-coded in `VentService`; the `VentCooldown`/`VentDuration` attributes are ignored) | Killer travel | Tuning attributes do nothing | Read them in `VentService` before any experiment |
